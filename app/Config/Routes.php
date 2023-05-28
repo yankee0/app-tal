@@ -61,6 +61,12 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
         $routes->get ('modifier/(:segment)','Remorques::edit/$1');
         $routes->post('modifier','Remorques::save');
     });
+
+    $routes->group('garage', function($routes)
+    {
+        $routes->get ('/','Garage::index');
+
+    });    
 });
 
 /*
