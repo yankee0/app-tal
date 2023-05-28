@@ -16,6 +16,7 @@ class Auth extends BaseController
     {
         $data = $this->request->getPost();
         $data['mdp'] = sha1($data['mdp']);
+        $data['matricule'] = strtoupper($data['matricule']);
         $creds = (new Utilisateurs())->where($data)->first();
         if ($creds) {
             session()->set('u', $creds);

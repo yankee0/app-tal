@@ -37,6 +37,13 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
 {
     $routes->get('/','SuperAdmin::index');
     $routes->post('modifer/mot-de-passe','Utilisateurs::changePassword');
+    $routes->group('utilisateurs', function($routes)
+    {
+        $routes->get('/','Utilisateurs::list');
+        $routes->post('/','Utilisateurs::create');
+        $routes->get('supprimer','Utilisateurs::delete');
+
+    });
 });
 
 /*
