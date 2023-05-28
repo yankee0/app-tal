@@ -36,6 +36,7 @@ $routes->get('/deconnexion', 'Auth::logout');
 $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
 {
     $routes->get('/','SuperAdmin::index');
+    $routes->post('modifer/mot-de-passe','Utilisateurs::changePassword');
 });
 
 /*

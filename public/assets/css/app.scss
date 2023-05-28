@@ -21,4 +21,5 @@
 .slidy{
   opacity: 0;
   animation: fadein 6s ease-in-out forwards;
+  z-index: 10000000;
 }
