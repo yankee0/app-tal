@@ -19,6 +19,7 @@ class Tracteurs extends Model
         'chrono',
         'marque',
         'chassis',
+        'type',
         'modele',
         'remarque',
         'fin_vt',

@@ -13,7 +13,18 @@ class Remorques extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'immatriculation',
+        'ancienne_immatriculation',
+        'chrono',
+        'marque',
+        'chassis',
+        'modele',
+        'remarque',
+        'fin_vt',
+        'fin_as',
+        'fin_cats',
+    ];
 
     // Dates
     protected $useTimestamps = false;

@@ -9,7 +9,7 @@ class Remorques extends BaseController
 {
     public function list()
     {
-        session()->p = 'tracteurs';
+        session()->p = 'remorques';
         $data = [
             'rs' => (new ModelsRemorques())->findAll(),
         ];
@@ -22,13 +22,13 @@ class Remorques extends BaseController
         // dd($data);
         $rules = [
             'chrono' => [
-                'rules' => 'is_unique[tracteurs.chrono]',
+                'rules' => 'is_unique[remorques.chrono]',
                 'error' => [
                     'is_unique' => 'Chrono en doublon.'
                 ]
             ],
             'immatriculation' => [
-                'rules' => 'is_unique[tracteurs.chrono]',
+                'rules' => 'is_unique[remorques.chrono]',
                 'error' => [
                     'is_unique' => 'Chrono en doublon.'
                 ]

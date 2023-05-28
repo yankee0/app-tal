@@ -20,6 +20,11 @@ class Remorques extends Migration
                 'constraint' => 255,
                 'null' => false,
             ],
+            'chassis' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
+            ],
             'immatriculation' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -34,6 +39,11 @@ class Remorques extends Migration
                 'type' => 'ENUM("SEMI-REMORQUE","REMORQUE","HAMMAR")',
             ],
             'remarque' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => true,
+            ],
+            'marque' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => true,
