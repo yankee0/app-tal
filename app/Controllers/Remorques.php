@@ -3,19 +3,17 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\Remorques;
-use App\Models\Tracteurs as ModelsTracteurs;
+use App\Models\Remorques as ModelsRemorques;
 
-class Tracteurs extends BaseController
+class Remorques extends BaseController
 {
     public function list()
     {
         session()->p = 'tracteurs';
         $data = [
-            'ts' => (new ModelsTracteurs())->findAll(),
-            'rs' => (new Remorques())->findAll()
+            'rs' => (new ModelsRemorques())->findAll(),
         ];
-        return view('utils/tracteurs/liste', $data);
+        return view('utils/remorques/liste', $data);
     }
 
     public function create()
@@ -42,11 +40,11 @@ class Tracteurs extends BaseController
                 ->with('notif', false)
                 ->with('message', $this->validator->listErrors());
         } else {
-            if ((new ModelsTracteurs())->save($data)) {
+            if ((new ModelsRemorques())->save($data)) {
                 return redirect()
                     ->back()
                     ->with('notif', true)
-                    ->with('message', 'Trateur ajouté.');
+                    ->with('message', 'Remorque ajouté.');
             } else {
                 return redirect()
                     ->back()
@@ -59,11 +57,11 @@ class Tracteurs extends BaseController
     public function delete()
     {
         $data = $this->request->getGet();
-        if ((new ModelsTracteurs())->delete($data)) {
+        if ((new ModelsRemorques())->delete($data)) {
             return redirect()
                 ->back()
                 ->with('notif', true)
-                ->with('message', 'Trateur supprimé.');
+                ->with('message', 'Remorque supprimé.');
         } else {
             return redirect()
                 ->back()
@@ -75,22 +73,22 @@ class Tracteurs extends BaseController
     public function edit(string $id)
     {
         $data = [
-            't' => (new ModelsTracteurs())->find($id),
+            'r' => (new ModelsRemorques())->find($id),
         ];
-        return view('utils/tracteurs/modifier', $data);
+        return view('utils/remorques/modifier', $data);
     }
 
     public function save()
     {
         $data = $this->request->getPost();
-        if ((new ModelsTracteurs())->save($data)) {
+        if ((new ModelsRemorques())->save($data)) {
             return redirect()
-                ->to(session()->root.'/tracteurs')
+                ->to(session()->root.'/remorques')
                 ->with('notif', true)
-                ->with('message', 'Trateur Modifier.');
+                ->with('message', 'Remorque Modifier.');
         } else {
             return redirect()
-                ->to(session()->root.'/tracteurs')
+                ->to(session()->root.'/remorques')
                 ->with('notif', false)
                 ->with('message', 'Echec de la modification.');
         }

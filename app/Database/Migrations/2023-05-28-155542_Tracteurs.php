@@ -59,6 +59,10 @@ class Tracteurs extends Migration
                 'type' => 'DATE',
                 'null' => true,
             ],
+            'fin_cats' => [
+                'type' => 'DATE',
+                'null' => true,
+            ],
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->addUniqueKey([

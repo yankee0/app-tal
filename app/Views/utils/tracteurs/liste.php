@@ -14,61 +14,63 @@ Tracteurs
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <?= form_open(base_url(session()->root . '/utilisateurs')) ?>
+        <?= form_open(base_url(session()->root . '/tracteurs')) ?>
         <div class="card-body">
           <h5 class="card-title">Ajouter un tracteur</h5>
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="chrono" aria-describedby="helpId" placeholder="Chrono" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="immatriculation" aria-describedby="helpId" placeholder="Immatriculation" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="ancienne_immatriculation" aria-describedby="helpId" placeholder="Ancienne immatriculation">
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="marque" aria-describedby="helpId" placeholder="Marque" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
-                <select class="form-select" name="chassis" required>
-                  <option hidden value="" selected>Sélectionner un chassis</option>
-                  <option value="">Laisser vide</option>
-                  <?php foreach ($rs as $r) : ?>
-                    <option value="<?= $r['chrono'] ?>"><?= $r['chrono'] . ' / ' . $r['immatriculation'] ?></option>
-                  <?php endforeach ?>
-                </select>
+                <div class="mb-3">
+                  <input type="text" class="form-control" name="chassis" aria-describedby="helpId" placeholder="Chassis" required>
+                </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="modele" aria-describedby="helpId" placeholder="Modele" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
-                <input type="date" class="form-control" name="fin_vt" aria-describedby="helpId" placeholder="Date de fin vt">
+                <input type="date" class="form-control" name="fin_vt" aria-describedby="helpId" placeholder="Date de fin VT">
                 <span class="text-sm text-muted">Date de fin visite technique, à laisser vide en cas d'indisponibilité.</span>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="mb-3">
-                <input type="date" class="form-control" name="fin_as" aria-describedby="helpId" placeholder="Date de fin as">
+                <input type="date" class="form-control" name="fin_as" aria-describedby="helpId" placeholder="Date de fin AS">
                 <span class="text-sm text-muted">Date de fin assurrance, à laisser vide en cas d'indisponibilité.</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
+                <input type="date" class="form-control" name="fin_cats" aria-describedby="helpId" placeholder="Date de fin C.A.T.s">
+                <span class="text-sm text-muted">Date de C.A.T.s, à laisser vide en cas d'indisponibilité.</span>
               </div>
             </div>
             <div class="col-md-12">
               <div class="mb-3">
-                <textarea class="form-control" name="remarque" rows="3" placeholder="remarque"></textarea>
+                <textarea class="form-control" name="remarque" rows="3" placeholder="Remarque"></textarea>
               </div>
             </div>
             <div class="col-md-12 text-center">
@@ -103,47 +105,51 @@ Tracteurs
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Marque</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Modèle</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Visite technique</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Assurrances</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CATs</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div class="d-flex px-2 gap-2">
-                    <div>
-                      <i class="fa fa-truck px-2" aria-hidden="true"></i>
-                    </div>
-                    <div class="my-auto">
-                      <h6 class="mb-0 text-sm">Spotify</h6>
-                      <h5 class="mb-0 text-sm text-secondary">Spotify</h5>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p class="text-sm font-weight-bold mb-0">$2,500</p>
-                </td>
-                <td>
-                  <span class="text-xs font-weight-bold">working</span>
-                </td>
-                <td class="align-middle text-center">
-                  <div class="d-flex align-items-center justify-content-center">
-                    <span class="me-2 text-xs font-weight-bold">60%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+              <?php foreach ($ts as $t) : ?>
+                <tr>
+                  <td>
+                    <div class="d-flex px-2 gap-2 d-flex align-items-center ">
+                      <div>
+                        <i class="fa fa-truck px-2" aria-hidden="true"></i>
+                      </div>
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-sm"><?= $t['chrono'] ?></h6>
+                        <h5 class="mb-0 text-sm text-secondary"><?= $t['immatriculation'] ?></h5>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td class="align-middle">
-                  <button class="btn btn-link text-secondary mb-0">
-                    <i class="fa fa-ellipsis-v text-xs"></i>
-                  </button>
-                </td>
-              </tr>
-              
+                  </td>
+                  <td>
+                    <p class="text-sm font-weight-bold mb-0"><?= $t['marque'] ?></p>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['modele'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['fin_vt'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['fin_as'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['fin_cats'] ?></span>
+                  </td>
+                  <td class="align-middle">
+                    <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/tracteurs/modifier/' . $t['id']) ?>">
+                      <i class="fa fa-edit text-xs"></i> Modifier
+                    </a>
+                    <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/tracteurs/supprimer?id=' . $t['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>">
+                      <i class="fa fa-trash text-danger text-xs"></i> Supprimer
+                    </a>
+                  </td>
+                </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

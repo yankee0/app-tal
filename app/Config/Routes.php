@@ -46,10 +46,20 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
     });
     $routes->group('tracteurs', function($routes)
     {
-        $routes->get('/','Tracteurs::list');
+        $routes->get ('/','Tracteurs::list');
         $routes->post('/','Tracteurs::create');
-        $routes->get('supprimer','Tracteurs::delete');
+        $routes->get ('supprimer','Tracteurs::delete');
+        $routes->get ('modifier/(:segment)','Tracteurs::edit/$1');
+        $routes->post('modifier','Tracteurs::save');
+    });
 
+    $routes->group('remorques', function($routes)
+    {
+        $routes->get ('/','Remorques::list');
+        $routes->post('/','Remorques::create');
+        $routes->get ('supprimer','Remorques::delete');
+        $routes->get ('modifier/(:segment)','Remorques::edit/$1');
+        $routes->post('modifier','Remorques::save');
     });
 });
 
