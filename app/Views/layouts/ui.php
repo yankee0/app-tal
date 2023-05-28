@@ -174,7 +174,7 @@
             </div>
             <?= form_close() ?>
           </div>
-          <ul class="navbar-nav  justify-content-end">
+          <ul class="navbar-nav  justify-content-end gap-2">
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -184,7 +184,7 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+            <li class="nav-item dropdown pe-2 d-flex align-items-center ">
               <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-user cursor-pointer"></i>
               </a>
@@ -196,7 +196,7 @@
                         <i class="fa fa-lock" aria-hidden="true"></i>
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
+                        <h6 class="text-sm font-weight-normal mb-1 text-dark">
                           Modifier mon mot de passe
                         </h6>
                       </div>
@@ -210,7 +210,7 @@
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                       </div>
                       <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
+                        <h6 class="text-sm font-weight-normal mb-1 text-dark">
                           Se déconnecter
                         </h6>
                       </div>
@@ -232,19 +232,15 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Livraisons</p>
                     <h5 class="font-weight-bolder">
-                      $53,000
+                      []
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
-                      since yesterday
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                    <i class="fa fa-truck-loading text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
@@ -257,19 +253,15 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Transferts</p>
                     <h5 class="font-weight-bolder">
-                      2,300
+                      []
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
-                      since last week
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                    <i class="fa fa-globe-africa text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
@@ -282,19 +274,15 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Tracteurs</p>
                     <h5 class="font-weight-bolder">
-                      +3,462
+                      []
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                      since last quarter
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                    <i class="fa fa-truck text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
@@ -307,18 +295,15 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Remorques</p>
                     <h5 class="font-weight-bolder">
-                      $103,430
+                      []
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                    <i class="fa fa-trailer text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
@@ -845,7 +830,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="<?= base_url('assets/js/argon-dashboard.min.js?v=2.0.4') ?>"></script>
 </body>
 
 </html>
