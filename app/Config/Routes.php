@@ -44,6 +44,13 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
         $routes->get('supprimer','Utilisateurs::delete');
 
     });
+    $routes->group('tracteurs', function($routes)
+    {
+        $routes->get('/','Tracteurs::list');
+        $routes->post('/','Tracteurs::create');
+        $routes->get('supprimer','Tracteurs::delete');
+
+    });
 });
 
 /*
