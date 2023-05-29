@@ -67,7 +67,16 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
         $routes->get ('/','Garage::index');
         $routes->post ('/','Garage::save');
 
-    });    
+    }); 
+    
+    $routes->group('carburant', function($routes)
+    {
+        $routes->get ('/','Carburant::index');
+        $routes->post ('/','Carburant::save');
+
+    }); 
+
+
 });
 
 /*

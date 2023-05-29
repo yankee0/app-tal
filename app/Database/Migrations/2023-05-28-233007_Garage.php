@@ -35,6 +35,7 @@ class Garage extends Migration
                 'null' => true,
             ],
         ]);
+        $this->forge->addKey('chrono');
         $this->forge->addPrimaryKey('id');
         $this->forge->createTable('garage',true);
     }
