@@ -11,7 +11,7 @@ class Garage extends BaseController
 {
     public function index()
     {
-        session()->p = 
+        session()->p = 'garage';
         $data = [
             'trs' => (new Tracteurs())->findAll(),
             'rms' => (new Remorques())->findAll()

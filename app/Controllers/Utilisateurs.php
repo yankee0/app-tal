@@ -95,7 +95,7 @@ class Utilisateurs extends BaseController
     public function create()
     {
         $data = $this->request->getPost();
-        $data['mdp'] = sha1('Tal1234567');
+        $data['mdp'] = sha1('TAL1234567');
         $data['nom'] = ucwords($data['nom']); 
         $data['matricule'] = strtoupper($data['matricule']); 
         // dd($data);

@@ -44,7 +44,7 @@ Utilisateurs
             </div>
             <div class="col-md-12">
               <div class="alert alert-primary text-white bg-gradient-faded-primary" role="alert">
-                <strong>Important!</strong> Tout nouveau compte à pour mot de passe par défaut <span class="badge bg-primary">Tal1234567</span>.
+                <strong>Important!</strong> Tout nouveau compte a pour mot de passe par défaut <span class="badge bg-primary">Tal1234567</span>.
               </div>
               
             </div>
