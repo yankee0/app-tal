@@ -65,6 +65,7 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
     $routes->group('garage', function($routes)
     {
         $routes->get ('/','Garage::index');
+        $routes->post ('/','Garage::save');
 
     });    
 });
