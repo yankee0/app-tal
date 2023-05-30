@@ -44,6 +44,16 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
         $routes->get('supprimer','Utilisateurs::delete');
 
     });
+
+    $routes->group('chauffeurs', function($routes)
+    {
+        $routes->get ('/','Chauffeurs::list');
+        $routes->post('/','Chauffeurs::create');
+        $routes->get ('supprimer','Chauffeurs::delete');
+        $routes->get ('modifier/(:segment)','Chauffeurs::edit/$1');
+        $routes->post('modifier','Chauffeurs::save');
+    });
+
     $routes->group('tracteurs', function($routes)
     {
         $routes->get ('/','Tracteurs::list');
@@ -66,15 +76,22 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
     {
         $routes->get ('/','Garage::index');
         $routes->post ('/','Garage::save');
-
     }); 
     
     $routes->group('carburant', function($routes)
     {
         $routes->get ('/','Carburant::index');
         $routes->post ('/','Carburant::save');
-
     }); 
+
+    $routes->group('livraisons', function($routes)
+    {
+        $routes->get ('/','Livraisons::list');
+        $routes->post('/','Livraisons::create');
+        $routes->get ('supprimer','Livraisons::delete');
+        $routes->get ('modifier/(:segment)','Livraisons::edit/$1');
+        $routes->post('modifier','Livraisons::save');
+    });
 
 
 });

@@ -20,11 +20,6 @@ class Chauffeurs extends Migration
                 'constraint' => 255,
                 'null' => false,
             ],
-            'prenom' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-                'null' => true,
-            ],
             'nom' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
