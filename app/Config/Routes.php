@@ -86,7 +86,7 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
 
     $routes->group('livraisons', function($routes)
     {
-        $routes->get ('/','Livraisons::list');
+        $routes->get ('/','Livraisons::dashboard');
         $routes->post('/','Livraisons::create');
         $routes->get ('supprimer','Livraisons::delete');
         $routes->get ('modifier/(:segment)','Livraisons::edit/$1');

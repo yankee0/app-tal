@@ -16,11 +16,11 @@ class Livraisons extends Migration
                 'auto_increment' => true,
             ],
             'date_depot_bl' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => true,
             ],
             'date_livraison' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => true,
             ],
             'conteneur' => [
@@ -69,7 +69,7 @@ class Livraisons extends Migration
                 'null' => true,
             ],
             'date_retour' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => true,
             ],
             'chauffeur_retour' => [
@@ -83,7 +83,7 @@ class Livraisons extends Migration
                 'null' => true,
             ],
             'date_validite' => [
-                'type' => 'DATETIME',
+                'type' => 'DATE',
                 'null' => true,
             ],
             'created_at' => [
