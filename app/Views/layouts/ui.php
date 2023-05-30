@@ -119,19 +119,19 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'livraisons') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/livraisons') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Livraisons</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link " href="./pages/billing.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="./pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
           </a>
         </li>
         <li class="nav-item">
@@ -227,9 +227,9 @@
                     <strong><?= session()->u['nom'] ?></strong>
                     <span class=" text-sm"><?= session()->u['profil'] ?></span>
                   </div>
-                  
-                </li>  
-              <li data-bs-toggle="modal" data-bs-target="#modpass">
+
+                </li>
+                <li data-bs-toggle="modal" data-bs-target="#modpass">
                   <a class="dropdown-item border-radius-md" href="#">
                     <div class="d-flex py-1">
                       <div class="avatar avatar-sm bg-gradient-warning  me-3  my-auto">

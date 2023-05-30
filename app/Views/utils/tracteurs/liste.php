@@ -104,6 +104,8 @@ Tracteurs
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Marque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Modèle</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
@@ -130,6 +132,12 @@ Tracteurs
                   </td>
                   <td>
                     <span class="text-xs font-weight-bold"><?= $t['modele'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['immatriculation'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['chassis'] ?></span>
                   </td>
                   <td>
                     <span class="text-xs font-weight-bold"><?= $t['fin_vt'] ?></span>

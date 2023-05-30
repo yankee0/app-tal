@@ -103,6 +103,8 @@ Remorques
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorques</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
@@ -123,6 +125,12 @@ Remorques
                         <h5 class="mb-0 text-sm text-secondary"><?= $r['immatriculation'] ?></h5>
                       </div>
                     </div>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $r['immatriculation'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $r['chassis'] ?></span>
                   </td>
                   <td>
                     <span class="text-xs font-weight-bold"><?= $r['type'] ?></span>
