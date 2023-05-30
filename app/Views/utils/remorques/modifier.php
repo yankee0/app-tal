@@ -35,6 +35,16 @@ Remorques
             </div>
             <div class="col-md-3">
               <div class="mb-3">
+                <select class="form-select" name="type" required id="">
+                  <option hidden selected value="">Sélectionner un type</option>
+                  <option <?= ($r['type'] == 'HAMMAR') ? 'selected' : '' ?> value="HAMMAR">HAMMAR</option>
+                  <option <?= ($r['type'] == 'REMORQUE') ? 'selected' : '' ?> value="REMORQUE">REMORQUE</option>
+                  <option <?= ($r['type'] == 'SEMI-REMORQUE') ? 'selected' : '' ?> value="SEMI-REMORQUE">SEMI-REMORQUE</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="mb-3">
                 <div class="mb-3">
                   <input type="text" value="<?= set_value('chassis', $r['chassis']) ?>" class="form-control" name="chassis" aria-describedby="helpId" placeholder="Chassis" required>
                 </div>

@@ -110,6 +110,7 @@ Tracteurs
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CATs</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Remarque</th>
                 <th></th>
               </tr>
             </thead>
@@ -147,6 +148,9 @@ Tracteurs
                   </td>
                   <td>
                     <span class="text-xs font-weight-bold"><?= $t['fin_cats'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $t['remarque'] ?></span>
                   </td>
                   <td class="align-middle">
                     <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/tracteurs/modifier/' . $t['id']) ?>">
