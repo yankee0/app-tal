@@ -4,34 +4,28 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Chauffeurs;
-use App\Models\Livraisons as ModelsLivraisons;
 use App\Models\Tracteurs;
+use App\Models\Transferts as ModelsTransferts;
 
-class Livraisons extends BaseController
+class Transferts extends BaseController
 {
     public function dashboard()
     {
-        session()->p = 'livraisons';
+        session()->p = "transferts";
         $data = [
-            'ls' => (new ModelsLivraisons())
-                ->where('chauffeur_retour', '')
-                ->orWhere('chauffeur_retour', null)
-                ->where('date_retour', '')
-                ->where('date_retour', '00-00-0000')
-                ->orWhere('date_retour', null)
-                ->where('mvt_retour', '')
-                ->orWhere('mvt_retour', null)
-                ->findAll(),
+            'trac' => (new Tracteurs())->findAll(),
             'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+            'ts' => (new ModelsTransferts())
+            ->where('eirs','NON OK')
+            ->findAll()
         ];
-
-        return view('utils/livraisons/dashboard', $data);
+        return view('utils/transferts/dashboard', $data);
     }
 
     public function create()
     {
-        if ((new ModelsLivraisons())->insert($this->request->getPost())) {
+        // dd($this->request->getPost());
+        if ((new ModelsTransferts())->insert($this->request->getPost())) {
             return redirect()
                 ->back()
                 ->with('notif', 'true')
@@ -47,7 +41,7 @@ class Livraisons extends BaseController
     public function delete()
     {
         $data = $this->request->getGet();
-        $modele = new ModelsLivraisons();
+        $modele = new ModelsTransferts();
 
         if ($modele->delete($data)) {
             return redirect()
@@ -65,20 +59,20 @@ class Livraisons extends BaseController
     public function edit($id)
     {
         $data = [
-            'l' => (new ModelsLivraisons())->find($id),
+            't' => (new ModelsTransferts())->find($id),
             'chauf' => (new Chauffeurs())->findAll(),
             'trac' => (new Tracteurs())->findAll()
         ];
 
-        return view('utils/livraisons/modifier', $data);
+        return view('utils/transferts/modifier', $data);
     }
 
     public function save()
     {
         $data = $this->request->getPost();
-        if ((new ModelsLivraisons())->save($data)) {
+        if ((new ModelsTransferts())->save($data)) {
             return redirect()
-                ->to(session()->root . '/livraisons')
+                ->to(session()->root . '/transferts')
                 ->with('notif', true)
                 ->with('message', 'Mis à jour réussie.');
         } else {

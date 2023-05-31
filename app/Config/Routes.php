@@ -93,6 +93,15 @@ $routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
         $routes->post('modifier','Livraisons::save');
     });
 
+    $routes->group('transferts', function($routes)
+    {
+        $routes->get ('/','Transferts::dashboard');
+        $routes->post('/','Transferts::create');
+        $routes->get ('supprimer','Transferts::delete');
+        $routes->get ('modifier/(:segment)','Transferts::edit/$1');
+        $routes->post('modifier','Transferts::save');
+    });
+
 
 });
 
