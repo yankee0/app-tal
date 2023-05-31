@@ -25,9 +25,36 @@ class Auth extends BaseController
                     session()->set('root', 'super-admin');
                     break;
 
+                case 'ADMIN':
+                    session()->set('root');
+                    session()->root = $destination  = '/admin';
+                    break;
+
+                case 'OPS':
+                    session()->set('root');
+                    session()->root = $destination  = '/ops';
+                    break;
+
+                case 'FACTURATION':
+                    session()->set('root');
+                    session()->root = $destination  = '/facturation';
+                    break;
+
+                case 'GARAGISTE':
+                    session()->set('root');
+                    session()->root = $destination  = '/garagiste';
+                    break;
+                case 'G. CARBURANT':
+                    session()->set('root');
+                    session()->root = $destination  = '/g_carburant';
+                    break;
+
                 default:
-                    session()->setFlashdata('notif', 'false');
-                    session()->setFlashdata('message', 'Profil incorrect.');
+                    return redirect()
+                        ->back()
+                        ->withInput()
+                        ->with('notif', 'false')
+                        ->with('message', 'Identifiants incorrects.');
                     break;
             }
             return redirect()->to(session()->root);

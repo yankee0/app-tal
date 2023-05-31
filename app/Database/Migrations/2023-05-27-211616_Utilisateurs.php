@@ -16,7 +16,7 @@ class Utilisateurs extends Migration
                 'auto_increment' => true,
             ],
             'profil' => [
-                'type' => 'ENUM("SUPERADMIN")',
+                'type' => 'ENUM("SUPERADMIN","ADMIN","OPS","FACTURATION","GARAGISTE","G. CARBURANT")',
                 'null' => true
             ],
             'nom' => [

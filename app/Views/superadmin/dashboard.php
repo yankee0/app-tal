@@ -19,7 +19,7 @@ Dashboard
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Livraisons</p>
                 <h5 class="font-weight-bolder">
-                  []
+                  <?= $l ?>
                 </h5>
               </div>
             </div>
@@ -40,7 +40,7 @@ Dashboard
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Transferts</p>
                 <h5 class="font-weight-bolder">
-                  []
+                  <?= $t ?>
                 </h5>
               </div>
             </div>
@@ -59,9 +59,9 @@ Dashboard
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">Tracteurs</p>
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Exports</p>
                 <h5 class="font-weight-bolder">
-                  []
+                  <?= $e ?>
                 </h5>
               </div>
             </div>
@@ -80,9 +80,9 @@ Dashboard
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-uppercase font-weight-bold">Remorques</p>
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Camions</p>
                 <h5 class="font-weight-bolder">
-                  []
+                  <?= $c ?>
                 </h5>
               </div>
             </div>

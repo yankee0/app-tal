@@ -23,7 +23,13 @@ Utilisateurs
               <div class="mb-3">
                 <select class="form-select" name="profil" id="profil" required>
                   <option hidden value="" selected>Sélectionnez un profil</option>
-                  <option value="SUPERADMIN">Super Administrateur</option>
+                  <?php if (session()->root == '/super-admin') : ?>
+                    <option value="SUPERADMIN">Super Administrateur</option>
+                  <?php endif; ?>
+                  <option <?= set_select('profil') ?> value="OPS">OPS</option>
+                  <option <?= set_select('profil') ?> value="FACTURATION">FACTURATION</option>
+                  <option <?= set_select('profil') ?> value="GARAGISTE">GARAGISTE</option>
+                  <option <?= set_select('profil') ?> value="G. CARBURANT">G. CARBURANT</option>
                 </select>
               </div>
             </div>
@@ -46,7 +52,7 @@ Utilisateurs
               <div class="alert alert-primary text-white bg-gradient-faded-primary" role="alert">
                 <strong>Important!</strong> Tout nouveau compte a pour mot de passe par défaut <span class="badge bg-primary">Tal1234567</span>.
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -99,7 +105,7 @@ Utilisateurs
                     </div>
                   </td>
                   <td class="align-middle ">
-                    <a href="<?= base_url(session()->root.'/utilisateurs/supprimer?id='.$u['id'].'&'.csrf_token().'='.csrf_hash()) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'utilisateur">
+                    <a href="<?= base_url(session()->root . '/utilisateurs/supprimer?id=' . $u['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'utilisateur">
                       Supprimer
                     </a>
                   </td>
