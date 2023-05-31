@@ -44,8 +44,12 @@ class SuperAdmin extends BaseController
 
         foreach ($ts as $t) {
             for ($i = 0; $i < sizeof($rs); $i++) {
-                if ($rs[$i]['chrono'] == $t['chrono']) {
-                    $rs[$i]['ops']++;
+                try {
+                    if ($rs[$i]['chrono'] == $t['chrono']) {
+                        $rs[$i]['ops']++;
+                    }
+                } catch (\Throwable $th) {
+                    continue;
                 }
             }
         }
