@@ -112,7 +112,7 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
 
 //admin
 $routes->group('admin', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'SuperAdmin::index');
+    $routes->get('/', 'Utilisateurs::list');
     $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
     $routes->group('utilisateurs', function ($routes) {
         $routes->get('/', 'Utilisateurs::list');
