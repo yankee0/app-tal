@@ -54,10 +54,10 @@ Exports
             </div>
             <div class="mb-3 col-md-4">
               <label for="camion_aller" class="form-label">Camion Aller</label>
-              <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
+              <select class="form-select " name="camion_aller" id="camion_aller">
                 <option value="" hidden selected>Sélectionner</option>
-                <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                <?php foreach ($trac as $t) : ?>
+                  <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -71,10 +71,10 @@ Exports
             </div>
             <div class="mb-3 col-md-4">
               <label for="camion_retour" class="form-label">Camion Retour</label>
-              <select class="form-select " name="chauffeur_camion" id="chauffeur_camion">
+              <select class="form-select " name="camion_retour" id="camion_retour">
                 <option value="" hidden selected>Sélectionner</option>
-                <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                <?php foreach ($trac as $t) : ?>
+                  <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>

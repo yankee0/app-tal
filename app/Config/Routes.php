@@ -112,7 +112,7 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
 
 //admin
 $routes->group('admin', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'Utilisateurs::list');
+    $routes->get('/', 'SuperAdmin::index');
     $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
     $routes->group('utilisateurs', function ($routes) {
         $routes->get('/', 'Utilisateurs::list');
@@ -242,6 +242,8 @@ $routes->group('g_carburant', ['filter' => 'g_carburant'], function ($routes) {
         $routes->post('/', 'Carburant::save');
     });
 });
+
+$routes->get('line','Graph::line');
 
 /*
  * --------------------------------------------------------------------

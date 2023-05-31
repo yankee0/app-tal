@@ -14,6 +14,7 @@ class Rapports extends BaseController
 {
     public function index()
     {
+        session()->p = 'rapports';
         return view('utils/rapports/dashboard');
     }
 

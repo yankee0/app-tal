@@ -34,7 +34,6 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url('assets/css/argon-dashboard.css?v=2.0.4') ?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">
-
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
