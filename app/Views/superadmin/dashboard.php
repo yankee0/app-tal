@@ -115,7 +115,7 @@ Dashboard
     </div>
   </div>
   <div class="row mt-4">
-    <div class="col-md">
+    <div class="col-md mb-3">
       <div class="card">
         <div class="card-header pb-0 p-3">
           <h6 class="mb-0">Classement chauffeurs selon le nombre de TEUS mensuel transfert</h6>
@@ -142,7 +142,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-md">
+    <div class="col-md mb-3">
       <div class="card">
         <div class="card-header pb-0 p-3">
           <h6 class="mb-0">Classement de la flotte selon le nombre d'opération mensuel</h6>
