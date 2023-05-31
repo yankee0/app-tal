@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Utilisateurs extends Migration
+class Chauffeurs extends Migration
 {
     public function up()
     {
@@ -15,33 +15,29 @@ class Utilisateurs extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'profil' => [
-                'type' => 'ENUM("SUPERADMIN","ADMIN","OPS","FACTURATION","GARAGISTE","G. CARBURANT")',
-                'null' => true
+            'matricule' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
             ],
             'nom' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => true,
             ],
-            'matricule' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-                'null' => true,
-            ],
-            'mdp' => [
+            'tel' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => true,
             ],
         ]);
-        $this->forge->addUniqueKey('matricule');
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('utilisateurs',true);
+        $this->forge->addUniqueKey('matricule');
+        $this->forge->createTable('chauffeurs');
     }
 
     public function down()
     {
-        $this->forge->dropTable('utilisateurs',true);
+        $this->forge->dropTable('chauffeurs');
     }
 }

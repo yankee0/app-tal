@@ -2,6 +2,11 @@
 
 namespace Config;
 
+use App\Filters\Admin;
+use App\Filters\Carburant;
+use App\Filters\Facturation;
+use App\Filters\Garagiste;
+use App\Filters\OpsFilter;
 use App\Filters\SuperAdmin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -23,6 +28,12 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'superAdmin'    => SuperAdmin::class,
+        'admin'         => Admin::class,
+        'ops'           => OpsFilter::class,
+        'facturation'   => Facturation::class,
+        //profils à implimenter
+        'garage'     => Garagiste::class,
+        'g_carburant'   => Carburant::class
     ];
 
     /**

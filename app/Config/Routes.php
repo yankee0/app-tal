@@ -33,50 +33,214 @@ $routes->get('/', 'Auth::index');
 $routes->post('/', 'Auth::login');
 $routes->get('/deconnexion', 'Auth::logout');
 
-$routes->group('super-admin',['filter' => 'superAdmin'], function($routes)
-{
-    $routes->get('/','SuperAdmin::index');
-    $routes->post('modifer/mot-de-passe','Utilisateurs::changePassword');
-    $routes->group('utilisateurs', function($routes)
-    {
-        $routes->get('/','Utilisateurs::list');
-        $routes->post('/','Utilisateurs::create');
-        $routes->get('supprimer','Utilisateurs::delete');
-
-    });
-    $routes->group('tracteurs', function($routes)
-    {
-        $routes->get ('/','Tracteurs::list');
-        $routes->post('/','Tracteurs::create');
-        $routes->get ('supprimer','Tracteurs::delete');
-        $routes->get ('modifier/(:segment)','Tracteurs::edit/$1');
-        $routes->post('modifier','Tracteurs::save');
+$routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
+    $routes->get('/', 'SuperAdmin::index');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+    $routes->group('utilisateurs', function ($routes) {
+        $routes->get('/', 'Utilisateurs::list');
+        $routes->post('/', 'Utilisateurs::create');
+        $routes->get('supprimer', 'Utilisateurs::delete');
     });
 
-    $routes->group('remorques', function($routes)
-    {
-        $routes->get ('/','Remorques::list');
-        $routes->post('/','Remorques::create');
-        $routes->get ('supprimer','Remorques::delete');
-        $routes->get ('modifier/(:segment)','Remorques::edit/$1');
-        $routes->post('modifier','Remorques::save');
+    $routes->group('chauffeurs', function ($routes) {
+        $routes->get('/', 'Chauffeurs::list');
+        $routes->post('/', 'Chauffeurs::create');
+        $routes->get('supprimer', 'Chauffeurs::delete');
+        $routes->get('modifier/(:segment)', 'Chauffeurs::edit/$1');
+        $routes->post('modifier', 'Chauffeurs::save');
     });
 
-    $routes->group('garage', function($routes)
-    {
-        $routes->get ('/','Garage::index');
-        $routes->post ('/','Garage::save');
+    $routes->group('tracteurs', function ($routes) {
+        $routes->get('/', 'Tracteurs::list');
+        $routes->post('/', 'Tracteurs::create');
+        $routes->get('supprimer', 'Tracteurs::delete');
+        $routes->get('modifier/(:segment)', 'Tracteurs::edit/$1');
+        $routes->post('modifier', 'Tracteurs::save');
+    });
 
-    }); 
-    
-    $routes->group('carburant', function($routes)
-    {
-        $routes->get ('/','Carburant::index');
-        $routes->post ('/','Carburant::save');
+    $routes->group('remorques', function ($routes) {
+        $routes->get('/', 'Remorques::list');
+        $routes->post('/', 'Remorques::create');
+        $routes->get('supprimer', 'Remorques::delete');
+        $routes->get('modifier/(:segment)', 'Remorques::edit/$1');
+        $routes->post('modifier', 'Remorques::save');
+    });
 
-    }); 
+    $routes->group('garage', function ($routes) {
+        $routes->get('/', 'Garage::index');
+        $routes->post('/', 'Garage::save');
+    });
+
+    $routes->group('carburant', function ($routes) {
+        $routes->get('/', 'Carburant::index');
+        $routes->post('/', 'Carburant::save');
+    });
+
+    $routes->group('livraisons', function ($routes) {
+        $routes->get('/', 'Livraisons::dashboard');
+        $routes->post('/', 'Livraisons::create');
+        $routes->get('supprimer', 'Livraisons::delete');
+        $routes->get('modifier/(:segment)', 'Livraisons::edit/$1');
+        $routes->post('modifier', 'Livraisons::save');
+    });
+
+    $routes->group('transferts', function ($routes) {
+        $routes->get('/', 'Transferts::dashboard');
+        $routes->post('/', 'Transferts::create');
+        $routes->get('supprimer', 'Transferts::delete');
+        $routes->get('modifier/(:segment)', 'Transferts::edit/$1');
+        $routes->post('modifier', 'Transferts::save');
+    });
+
+    $routes->group('exports', function ($routes) {
+        $routes->get('/', 'Exports::dashboard');
+        $routes->post('/', 'Exports::create');
+        $routes->get('supprimer', 'Exports::delete');
+        $routes->get('modifier/(:segment)', 'Exports::edit/$1');
+        $routes->post('modifier', 'Exports::save');
+    });
 
 
+    $routes->group('rapports', function ($routes) {
+        $routes->get('/', 'Rapports::index');
+        $routes->post('operations', 'Rapports::genOps');
+        $routes->post('garage', 'Rapports::genGarage');
+        $routes->post('carburant', 'Rapports::genCarb');
+        $routes->post('tracteurs', 'Rapports::genTrac');
+    });
+});
+
+//admin
+$routes->group('admin', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Utilisateurs::list');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+    $routes->group('utilisateurs', function ($routes) {
+        $routes->get('/', 'Utilisateurs::list');
+        $routes->post('/', 'Utilisateurs::create');
+        $routes->get('supprimer', 'Utilisateurs::delete');
+    });
+
+    $routes->group('chauffeurs', function ($routes) {
+        $routes->get('/', 'Chauffeurs::list');
+        $routes->post('/', 'Chauffeurs::create');
+        $routes->get('supprimer', 'Chauffeurs::delete');
+        $routes->get('modifier/(:segment)', 'Chauffeurs::edit/$1');
+        $routes->post('modifier', 'Chauffeurs::save');
+    });
+
+    $routes->group('tracteurs', function ($routes) {
+        $routes->get('/', 'Tracteurs::list');
+        $routes->post('/', 'Tracteurs::create');
+        $routes->get('supprimer', 'Tracteurs::delete');
+        $routes->get('modifier/(:segment)', 'Tracteurs::edit/$1');
+        $routes->post('modifier', 'Tracteurs::save');
+    });
+
+    $routes->group('remorques', function ($routes) {
+        $routes->get('/', 'Remorques::list');
+        $routes->post('/', 'Remorques::create');
+        $routes->get('supprimer', 'Remorques::delete');
+        $routes->get('modifier/(:segment)', 'Remorques::edit/$1');
+        $routes->post('modifier', 'Remorques::save');
+    });
+
+    $routes->group('garage', function ($routes) {
+        $routes->get('/', 'Garage::index');
+        $routes->post('/', 'Garage::save');
+    });
+
+    $routes->group('carburant', function ($routes) {
+        $routes->get('/', 'Carburant::index');
+        $routes->post('/', 'Carburant::save');
+    });
+
+    $routes->group('livraisons', function ($routes) {
+        $routes->get('/', 'Livraisons::dashboard');
+        $routes->post('/', 'Livraisons::create');
+        $routes->get('supprimer', 'Livraisons::delete');
+        $routes->get('modifier/(:segment)', 'Livraisons::edit/$1');
+        $routes->post('modifier', 'Livraisons::save');
+    });
+
+    $routes->group('transferts', function ($routes) {
+        $routes->get('/', 'Transferts::dashboard');
+        $routes->post('/', 'Transferts::create');
+        $routes->get('supprimer', 'Transferts::delete');
+        $routes->get('modifier/(:segment)', 'Transferts::edit/$1');
+        $routes->post('modifier', 'Transferts::save');
+    });
+
+    $routes->group('exports', function ($routes) {
+        $routes->get('/', 'Exports::dashboard');
+        $routes->post('/', 'Exports::create');
+        $routes->get('supprimer', 'Exports::delete');
+        $routes->get('modifier/(:segment)', 'Exports::edit/$1');
+        $routes->post('modifier', 'Exports::save');
+    });
+
+});
+//OPS
+$routes->group('ops', ['filter' => 'ops'], function ($routes) {
+
+    $routes->get('/', 'Livraisons::dashboard');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+
+    $routes->group('livraisons', function ($routes) {
+        $routes->get('/', 'Livraisons::dashboard');
+        $routes->post('/', 'Livraisons::create');
+        $routes->get('supprimer', 'Livraisons::delete');
+        $routes->get('modifier/(:segment)', 'Livraisons::edit/$1');
+        $routes->post('modifier', 'Livraisons::save');
+    });
+
+    $routes->group('transferts', function ($routes) {
+        $routes->get('/', 'Transferts::dashboard');
+        $routes->post('/', 'Transferts::create');
+        $routes->get('supprimer', 'Transferts::delete');
+        $routes->get('modifier/(:segment)', 'Transferts::edit/$1');
+        $routes->post('modifier', 'Transferts::save');
+    });
+
+    $routes->group('exports', function ($routes) {
+        $routes->get('/', 'Exports::dashboard');
+        $routes->post('/', 'Exports::create');
+        $routes->get('supprimer', 'Exports::delete');
+        $routes->get('modifier/(:segment)', 'Exports::edit/$1');
+        $routes->post('modifier', 'Exports::save');
+    });
+});
+
+//facturation
+$routes->group('facturation', ['filter' => 'facturation'], function ($routes) {
+    $routes->get('/', 'Rapports::index');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+    $routes->group('rapports', function ($routes) {
+        $routes->get('/', 'Rapports::index');
+        $routes->post('operations', 'Rapports::genOps');
+        // $routes->post('garage', 'Rapports::genGarage');
+        // $routes->post('carburant', 'Rapports::genCarb');
+        // $routes->post('tracteurs', 'Rapports::genTrac');
+    });
+});
+
+//garage
+$routes->group('garagiste', ['filter' => 'garage'], function ($routes) {
+    $routes->get('/', 'Garage::index');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+    $routes->group('garage', function ($routes) {
+        $routes->get('/', 'Garage::index');
+        $routes->post('/', 'Garage::save');
+    });
+});
+
+// g_carb
+$routes->group('g_carburant', ['filter' => 'g_carburant'], function ($routes) {
+    $routes->get('/', 'Carburant::index');
+    $routes->post('modifer/mot-de-passe', 'Utilisateurs::changePassword');
+    $routes->group('carburant', function ($routes) {
+        $routes->get('/', 'Carburant::index');
+        $routes->post('/', 'Carburant::save');
+    });
 });
 
 /*

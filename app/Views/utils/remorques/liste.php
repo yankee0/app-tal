@@ -35,8 +35,8 @@ Remorques
             </div>
             <div class="col-md-3">
               <div class="mb-3">
-                <select class="form-select" name="type" required id="">
-                  <option hidden selected>Sélectionner un type</option>
+                <select class="form-select" name="type" required>
+                  <option hidden selected value="">Sélectionner un type</option>
                   <option value="HAMMAR">HAMMAR</option>
                   <option value="REMORQUE">REMORQUE</option>
                   <option value="SEMI-REMORQUE">SEMI-REMORQUE</option>
@@ -103,10 +103,13 @@ Remorques
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorques</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CATs</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Remarque</th>
                 <th></th>
               </tr>
             </thead>
@@ -125,6 +128,12 @@ Remorques
                     </div>
                   </td>
                   <td>
+                    <span class="text-xs font-weight-bold"><?= $r['immatriculation'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $r['chassis'] ?></span>
+                  </td>
+                  <td>
                     <span class="text-xs font-weight-bold"><?= $r['type'] ?></span>
                   </td>
                   <td>
@@ -135,6 +144,9 @@ Remorques
                   </td>
                   <td>
                     <span class="text-xs font-weight-bold"><?= $r['fin_cats'] ?></span>
+                  </td>
+                  <td>
+                    <span class="text-xs font-weight-bold"><?= $r['remarque'] ?></span>
                   </td>
                   <td class="align-middle">
                     <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/remorques/modifier/' . $r['id']) ?>">
