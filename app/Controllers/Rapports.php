@@ -217,11 +217,11 @@ class Rapports extends BaseController
                 'exports' => $sumExp
             ]);
 
-            return view('utils/tracteurs/rapports', [
-                'ls' => $tab,
-                'filename' => 'RAPPORT_MENSUEL_TRACTEURS_' . $m . '_' . $y
-            ]);
         }
+        return view('utils/tracteurs/rapports', [
+            'ls' => $tab,
+            'filename' => 'RAPPORT_MENSUEL_TRACTEURS_' . $m . '_' . $y
+        ]);
     }
 
     public function genClass()
