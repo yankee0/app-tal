@@ -14,7 +14,7 @@ Garage
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <?= form_open(base_url(session()->root . '/garage/')) ?>
+        <?= form_open(base_url(session()->root . '/garage')) ?>
         <?= csrf_field() ?>
         <div class="card-body">
           <div class="row">

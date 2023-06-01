@@ -14,7 +14,7 @@ Carburant
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <?= form_open(base_url(session()->root . '/carburant/')) ?>
+        <?= form_open(base_url(session()->root . '/carburant')) ?>
         <?= csrf_field() ?>
         <div class="card-body">
           <div class="row">
