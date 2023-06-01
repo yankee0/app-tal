@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Carburant;
+use App\Models\Chauffeurs;
 use App\Models\Exports;
 use App\Models\Garage;
 use App\Models\Livraisons;
@@ -40,7 +41,7 @@ class Rapports extends BaseController
         if ($m == 'x') {
             // Récupération des livraisons du mois courant
             $livraisons = (new Livraisons())
-                ->where('date_retour IS NOT NULL')
+                // ->where('date_retour IS NOT NULL')
                 ->where('YEAR(date_livraison)', $y)
                 ->findAll();
             $filename = "RAPPORT_LIVRAISONS_ANNUEL_" . $y;
@@ -48,7 +49,7 @@ class Rapports extends BaseController
 
             // Récupération des livraisons du mois courant
             $livraisons = (new Livraisons())
-                ->where('date_retour IS NOT NULL')
+                // ->where('date_retour IS NOT NULL')
                 ->where('MONTH(date_livraison)', $m)
                 ->where('YEAR(date_livraison)', $y)
                 ->findAll();
@@ -78,6 +79,15 @@ class Rapports extends BaseController
                 ->findAll();
             $filename = "RAPPORT_TRANSFERT_MENSUEL_" . $m . "_" . $y;
         }
+        for ($i = 0; $i < sizeof($transferts); $i++) {
+            try {
+                $c = (new Chauffeurs())->where('matricule', $transferts[$i]['chauffeur'])->first();
+                $transferts[$i]['chauffeur'] .= ' - ' . $c['nom'];
+            } catch (\Throwable $th) {
+                continue;
+            }
+        }
+        // dd($transferts);
         $data = [
             'ts' => $transferts,
             'filename' => $filename
@@ -183,17 +193,61 @@ class Rapports extends BaseController
             }
             // dd($sumTeus);
 
+            //livraisons
+            $sumLiv = (new Livraisons())
+                ->where('tracteur', $tr['chrono'])
+                ->where('MONTH(date_livraisons)', $m)
+                ->where('YEAR(date_livraisons)', $y)
+                ->countAll();
+
+            //exports
+            $sumExp = (new Exports())
+                ->where('camion_aller', $tr['chrono'])
+                ->orWhere('camion_retour', $tr['chrono'])
+                ->where('MONTH(date_posit)', $m)
+                ->where('YEAR(date_posit)', $y)
+                ->countAll();
+
             array_push($tab, [
                 'chrono' => $tr['chrono'],
                 'carburant' => $sumCarbs,
                 'garage' => $sumGars,
                 'teus' => $sumTeus,
+                'livraisons' => $sumLiv,
+                'exports' => $sumExp
             ]);
 
-            return view('utils/tracteurs/rapports',[
+            return view('utils/tracteurs/rapports', [
                 'ls' => $tab,
-                'filename' => 'RAPPORT_MENSUEL_TRACTEURS_'.$m.'_'.$y
+                'filename' => 'RAPPORT_MENSUEL_TRACTEURS_' . $m . '_' . $y
             ]);
+        }
+    }
+
+    public function genClass()
+    {
+        $type = $this->request->getVar('type');
+        $m = $this->request->getVar('m');
+        $y = $this->request->getVar('y');
+
+        switch ($type) {
+            case 'chauffeur':
+                $data = (new SuperAdmin)->tcm($m, $y);
+                return view('utils/rapports/tmc',[
+                    'cs' => $data,
+                    'filename' => 'CLASSEMENT_CHAUFFEUR_TEUS_TRANSFERT_MENSUEL_'.$m.'_'.$y
+                ]);
+                // dd($data);
+                break;
+
+            default:
+                $data = (new SuperAdmin)->mcm($m, $y);
+                // dd($data);
+                return view('utils/rapports/mcm',[
+                    'ts' => $data,
+                    'filename' => 'CLASSEMENT_TRACTEURS_OPERATION_MENSUEL_'.$m.'_'.$y
+                ]);
+                break;
         }
     }
 }

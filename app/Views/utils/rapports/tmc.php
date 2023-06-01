@@ -1,12 +1,12 @@
 <?= $this->extend('layouts/ui'); ?>
 <?= $this->section('title'); ?>
-Tracteurs
+Chauffeur - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('bctitle'); ?>
-Tracteurs
+Chauffeur - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('ptitle'); ?>
-Tracteurs
+Chauffeur - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('main'); ?>
 
@@ -28,48 +28,37 @@ Tracteurs
           <table id="tableau" class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Consommation carburant </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervention garage</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS transferts</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre de livraisons</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre d'export</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rang</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matricule</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUs</th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($ls as $l) : ?>
+              <?php $a = 1;
+              foreach ($cs as $c) : ?>
                 <tr>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['chrono'] ?>
+                      <?php echo $a ; $a++;?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['carburant'] ?>
+                      <?= $c['matricule'] ?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['garage'] ?>
+                      <?= $c['nom'] ?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['teus'] ?>
+                      <?= $c['teus'] ?>
                     </div>
                   </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['livraisons'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['exports'] ?>
-                    </div>
-                  </td>
-                  
+
                 </tr>
               <?php endforeach; ?>
             </tbody>

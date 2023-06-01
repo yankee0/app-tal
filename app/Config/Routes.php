@@ -107,6 +107,7 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
         $routes->post('garage', 'Rapports::genGarage');
         $routes->post('carburant', 'Rapports::genCarb');
         $routes->post('tracteurs', 'Rapports::genTrac');
+        $routes->post('class', 'Rapports::genClass');
     });
 });
 
