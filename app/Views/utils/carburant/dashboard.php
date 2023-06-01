@@ -17,7 +17,7 @@ Carburant
         <?= form_open(base_url(session()->root . '/carburant/')) ?>
         <?= csrf_field() ?>
         <div class="card-body">
-          <form id="carburant-form" method="post" action="<?= base_url('garagiste') ?>">
+          <form id="carburant-form" method="post" action="<?= base_url('carburant') ?>">
             <div class="row">
               <div class="form-group col-md">
                 <label for="date">Date:</label>

@@ -1,12 +1,12 @@
 <?= $this->extend('layouts/ui'); ?>
 <?= $this->section('title'); ?>
-Tracteurs
+Tracteurs - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('bctitle'); ?>
-Tracteurs
+Tracteurs - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('ptitle'); ?>
-Tracteurs
+Tracteurs - Classement
 <?= $this->endSection(); ?>
 <?= $this->section('main'); ?>
 
@@ -28,48 +28,31 @@ Tracteurs
           <table id="tableau" class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rang</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Consommation carburant </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervention garage</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS transferts</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre de livraisons</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre d'export</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre d'opérations</th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($ls as $l) : ?>
+              <?php $a = 1;
+              foreach ($ts as $t) : ?>
                 <tr>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['chrono'] ?>
+                      <?php echo $a ; $a++;?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['carburant'] ?>
+                      <?= $t['chrono'] ?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['garage'] ?>
+                      <?= $t['ops'] ?>
                     </div>
                   </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['teus'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['livraisons'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['exports'] ?>
-                    </div>
-                  </td>
-                  
+
                 </tr>
               <?php endforeach; ?>
             </tbody>

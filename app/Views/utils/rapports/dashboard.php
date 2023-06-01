@@ -62,12 +62,12 @@ Rapports
         <h6 class="m-0 font-weight-bold text-primary">Rapport classement</h6>
       </div>
       <div class="card-body">
-        <form class="col-md" action="<?= base_url('AllahIsOne/rapportsclass') ?>" method="post">
+        <form class="col-md" action="<?= base_url(session()->root.'/rapports/class') ?>" method="post">
           <div class="mb-3">
             <label for="report-type" class="form-label">Type de rapport : <br> </label>
             <select id="report-type" name="type" class="form-select" required>
               <option value="" selected disabled hidden>Choisir un type de rapport...</option>
-              <option value="chauffeur">Classement chauffeur selon le nombre de TEUs</option>
+              <option value="chauffeur">Classement chauffeur selon le nombre de TEUs transfert</option>
               <option value="tracteur">Classement camion selon le nombre d'opérations</option>
             </select>
           </div>
