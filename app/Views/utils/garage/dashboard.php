@@ -50,7 +50,6 @@ Garage
           </div>
         </div>
       </div>
-      <?= csrf_field() ?>
       <?= form_close() ?>
     </div>
   </div>
