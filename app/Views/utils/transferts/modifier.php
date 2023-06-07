@@ -31,6 +31,14 @@ Tranferts
               </select>
             </div>
             <div class="mb-3 col-md-4">
+              <label for="type" class="form-label">Type</label>
+              <select class="form-select " name="type" id="type" required>
+                <option selected hidden value="">Selectionner</option>
+                <option <?= ($t['type'] == "TOM") ? 'selected' : '' ?> value="TOM">TOM</option>
+                <option <?= ($t['type'] == "WALL") ? 'selected' : '' ?> value="WALL">WALL</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
               <label for="date_mvt" class="form-label">Date MVT</label>
               <input value="<?= set_value('date_mvt', $t['date_mvt']) ?>" type="datetime-local" class="form-control" name="date_mvt" id="date_mvt" aria-describedby="helpId" placeholder="">
             </div>

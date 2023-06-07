@@ -67,7 +67,7 @@ class Rapports extends BaseController
         if ($m == 'x') {
             // Récupération des transferts du mois courant
             $transferts = (new Transferts())
-                ->where('YEAR(date_livraison)', $y)
+                ->where('YEAR(date_mvt)', $y)
                 ->findAll();
             $filename = "RAPPORT_TRANSFERT_ANNUEL_" . $y;
         } else {
@@ -100,7 +100,7 @@ class Rapports extends BaseController
         if ($m == 'x') {
             // Récupération des exports du mois courant
             $exports = (new Exports())
-                ->where('YEAR(date_livraison)', $y)
+                ->where('YEAR(date_posit)', $y)
                 ->findAll();
             $filename = "RAPPORT_EXPORTS_ANNUEL_" . $y;
         } else {
