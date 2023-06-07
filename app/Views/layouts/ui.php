@@ -34,6 +34,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url('assets/css/argon-dashboard.css?v=2.0.4') ?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">
+  <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -200,12 +202,7 @@
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <?= form_open(base_url(session()->root . '/recherche')) ?>
-            <div class="input-group">
-              <input type="search" class="form-control" placeholder="Conteneur...">
-              <button class="input-group-text text-body btn-light" type="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
-            </div>
-            <?= form_close() ?>
+            
           </div>
           <ul class="navbar-nav  justify-content-end gap-2">
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

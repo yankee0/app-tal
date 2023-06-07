@@ -104,7 +104,7 @@ Exports
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($l['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($e['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -114,7 +114,7 @@ Exports
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($l['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($e['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>

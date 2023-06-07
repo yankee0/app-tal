@@ -29,6 +29,7 @@ Tranferts
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type conteneur</th>
@@ -50,6 +51,11 @@ Tranferts
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $t['type_transfert'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $t['type'] ?>
                     </div>
                   </td>
                   <td>

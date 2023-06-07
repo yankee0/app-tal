@@ -15,6 +15,7 @@ class Transferts extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         "type_transfert",
+        "type",
         "date_mvt",
         "conteneur",
         "type_conteneur",

@@ -17,6 +17,8 @@ class Transferts extends BaseController
             'chauf' => (new Chauffeurs())->findAll(),
             'ts' => (new ModelsTransferts())
             ->where('eirs','NON OK')
+            ->orWhere('type','')
+            ->orWhere('type',null)
             ->findAll()
         ];
         return view('utils/transferts/dashboard', $data);
