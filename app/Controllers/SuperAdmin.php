@@ -17,7 +17,7 @@ class SuperAdmin extends BaseController
         return view('superadmin/dashboard', [
             'l' => (new Livraisons())->countAll(),
             't' => (new Transferts())->countAll(),
-            'e' => (new Livraisons())->countAll(),
+            'e' => (new Exports())->countAll(),
             'c' => (new Tracteurs())->countAll(),
             'tcm' => $this->tcm(),
             'mcm' => $this->mcm()
