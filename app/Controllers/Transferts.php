@@ -13,8 +13,8 @@ class Transferts extends BaseController
     {
         session()->p = "transferts";
         $data = [
-            'trac' => (new Tracteurs())->findAll(),
-            'chauf' => (new Chauffeurs())->findAll(),
+            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
             'ts' => (new ModelsTransferts())
             ->where('eirs','NON OK')
             ->orWhere('type','')
@@ -62,8 +62,8 @@ class Transferts extends BaseController
     {
         $data = [
             't' => (new ModelsTransferts())->find($id),
-            'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
         ];
 
         return view('utils/transferts/modifier', $data);

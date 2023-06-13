@@ -55,6 +55,19 @@ class Rapports extends BaseController
                 ->findAll();
             $filename = "RAPPORT_LIVRAISONS_MENSUEL_" . $m . "_" . $y;
         }
+
+        for ($i=0; $i < sizeof($livraisons); $i++) { 
+            $ca = (new Chauffeurs())->where('matricule',$livraisons[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('matricule',$livraisons[$i]['chauffeur_retour'])->first();
+
+            if (!empty($ca)) {
+                $livraisons[$i]['chauffeur_aller'] = $ca['nom'];
+            }
+
+            if (!empty($cr)) {
+                $livraisons[$i]['chauffeur_retour'] = $cr['nom'];
+            }
+        }
         $data = [
             'ls' => $livraisons,
             'filename' => $filename
@@ -88,6 +101,14 @@ class Rapports extends BaseController
             }
         }
         // dd($transferts);
+        for ($i=0; $i < sizeof($transferts); $i++) { 
+            $ca = (new Chauffeurs())->where('matricule',$transferts[$i]['chauffeur'])->first();
+
+            if (!empty($ca)) {
+                $transferts[$i]['chauffeur'] = $ca['nom'];
+            }
+
+        }
         $data = [
             'ts' => $transferts,
             'filename' => $filename
@@ -111,6 +132,18 @@ class Rapports extends BaseController
                 ->where('YEAR(date_posit)', $y)
                 ->findAll();
             $filename = "RAPPORT_EXPORTS_MENSUEL_" . $m . "_" . $y;
+        }
+        for ($i=0; $i < sizeof($exports); $i++) { 
+            $ca = (new Chauffeurs())->where('matricule',$exports[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('matricule',$exports[$i]['chauffeur_retour'])->first();
+
+            if (!empty($ca)) {
+                $exports[$i]['chauffeur_aller'] = $ca['nom'];
+            }
+
+            if (!empty($cr)) {
+                $exports[$i]['chauffeur_retour'] = $cr['nom'];
+            }
         }
         $data = [
             'es' => $exports,
@@ -194,16 +227,17 @@ class Rapports extends BaseController
             // dd($sumTeus);
 
             //livraisons
+            $sumLiv = 0;
             $sumLiv = (new Livraisons())
                 ->where('tracteur', $tr['chrono'])
-                ->where('MONTH(date_livraisons)', $m)
-                ->where('YEAR(date_livraisons)', $y)
+                ->where('MONTH(date_livraison)', $m)
+                ->where('YEAR(date_livraison)', $y)
                 ->countAll();
 
             //exports
+            $sumExp = 0;
             $sumExp = (new Exports())
                 ->where('camion_aller', $tr['chrono'])
-                ->orWhere('camion_retour', $tr['chrono'])
                 ->where('MONTH(date_posit)', $m)
                 ->where('YEAR(date_posit)', $y)
                 ->countAll();
@@ -216,7 +250,6 @@ class Rapports extends BaseController
                 'livraisons' => $sumLiv,
                 'exports' => $sumExp
             ]);
-
         }
         return view('utils/tracteurs/rapports', [
             'ls' => $tab,
@@ -233,9 +266,9 @@ class Rapports extends BaseController
         switch ($type) {
             case 'chauffeur':
                 $data = (new SuperAdmin)->tcm($m, $y);
-                return view('utils/rapports/tmc',[
+                return view('utils/rapports/tmc', [
                     'cs' => $data,
-                    'filename' => 'CLASSEMENT_CHAUFFEUR_TEUS_TRANSFERT_MENSUEL_'.$m.'_'.$y
+                    'filename' => 'CLASSEMENT_CHAUFFEUR_TEUS_TRANSFERT_MENSUEL_' . $m . '_' . $y
                 ]);
                 // dd($data);
                 break;
@@ -243,9 +276,9 @@ class Rapports extends BaseController
             default:
                 $data = (new SuperAdmin)->mcm($m, $y);
                 // dd($data);
-                return view('utils/rapports/mcm',[
+                return view('utils/rapports/mcm', [
                     'ts' => $data,
-                    'filename' => 'CLASSEMENT_TRACTEURS_OPERATION_MENSUEL_'.$m.'_'.$y
+                    'filename' => 'CLASSEMENT_TRACTEURS_OPERATION_MENSUEL_' . $m . '_' . $y
                 ]);
                 break;
         }

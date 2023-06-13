@@ -22,8 +22,8 @@ class Livraisons extends BaseController
                 ->where('mvt_retour', '')
                 ->orWhere('mvt_retour', null)
                 ->findAll(),
-            'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
         ];
 
         return view('utils/livraisons/dashboard', $data);
@@ -66,8 +66,8 @@ class Livraisons extends BaseController
     {
         $data = [
             'l' => (new ModelsLivraisons())->find($id),
-            'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
         ];
 
         return view('utils/livraisons/modifier', $data);
