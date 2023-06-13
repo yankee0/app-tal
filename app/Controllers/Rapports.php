@@ -56,9 +56,9 @@ class Rapports extends BaseController
             $filename = "RAPPORT_LIVRAISONS_MENSUEL_" . $m . "_" . $y;
         }
 
-        for ($i=0; $i < sizeof($livraisons); $i++) { 
-            $ca = (new Chauffeurs())->where('matricule',$livraisons[$i]['chauffeur_aller'])->first();
-            $cr = (new Chauffeurs())->where('matricule',$livraisons[$i]['chauffeur_retour'])->first();
+        for ($i = 0; $i < sizeof($livraisons); $i++) {
+            $ca = (new Chauffeurs())->where('matricule', $livraisons[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('matricule', $livraisons[$i]['chauffeur_retour'])->first();
 
             if (!empty($ca)) {
                 $livraisons[$i]['chauffeur_aller'] = $ca['nom'];
@@ -101,13 +101,12 @@ class Rapports extends BaseController
             }
         }
         // dd($transferts);
-        for ($i=0; $i < sizeof($transferts); $i++) { 
-            $ca = (new Chauffeurs())->where('matricule',$transferts[$i]['chauffeur'])->first();
+        for ($i = 0; $i < sizeof($transferts); $i++) {
+            $ca = (new Chauffeurs())->where('matricule', $transferts[$i]['chauffeur'])->first();
 
             if (!empty($ca)) {
                 $transferts[$i]['chauffeur'] = $ca['nom'];
             }
-
         }
         $data = [
             'ts' => $transferts,
@@ -133,9 +132,9 @@ class Rapports extends BaseController
                 ->findAll();
             $filename = "RAPPORT_EXPORTS_MENSUEL_" . $m . "_" . $y;
         }
-        for ($i=0; $i < sizeof($exports); $i++) { 
-            $ca = (new Chauffeurs())->where('matricule',$exports[$i]['chauffeur_aller'])->first();
-            $cr = (new Chauffeurs())->where('matricule',$exports[$i]['chauffeur_retour'])->first();
+        for ($i = 0; $i < sizeof($exports); $i++) {
+            $ca = (new Chauffeurs())->where('matricule', $exports[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('matricule', $exports[$i]['chauffeur_retour'])->first();
 
             if (!empty($ca)) {
                 $exports[$i]['chauffeur_aller'] = $ca['nom'];
@@ -232,7 +231,9 @@ class Rapports extends BaseController
                 ->where('tracteur', $tr['chrono'])
                 ->where('MONTH(date_livraison)', $m)
                 ->where('YEAR(date_livraison)', $y)
-                ->countAll();
+                ->find();
+            $sumLiv = sizeof($sumLiv);
+
 
             //exports
             $sumExp = 0;
@@ -240,7 +241,8 @@ class Rapports extends BaseController
                 ->where('camion_aller', $tr['chrono'])
                 ->where('MONTH(date_posit)', $m)
                 ->where('YEAR(date_posit)', $y)
-                ->countAll();
+                ->find();
+            $sumExp = sizeof($sumExp);
 
             array_push($tab, [
                 'chrono' => $tr['chrono'],
