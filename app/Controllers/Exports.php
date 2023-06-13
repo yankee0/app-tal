@@ -19,8 +19,8 @@ class Exports extends BaseController
                 ->where('camion_retour', '')
                 ->orWhere('camion_retour', null)
                 ->findAll(),
-            'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+                'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+                'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
         ];
 
         return view('utils/exports/dashboard', $data);
@@ -63,8 +63,8 @@ class Exports extends BaseController
     {
         $data = [
             'e' => (new ModelsExports())->find($id),
-            'chauf' => (new Chauffeurs())->findAll(),
-            'trac' => (new Tracteurs())->findAll()
+            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
         ];
 
         return view('utils/exports/modifier', $data);
