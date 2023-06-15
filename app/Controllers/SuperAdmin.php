@@ -25,7 +25,7 @@ class SuperAdmin extends BaseController
     }
 
     // mvt camion mensu
-    public function mcm($m = null , $y = null)
+    public function mcm($m = null , $y = null, $stop = true)
     {
         $cs = (new Tracteurs())->findAll();
         $ts = (new Transferts())
@@ -91,14 +91,16 @@ class SuperAdmin extends BaseController
         }
 
         $tab = $this->trierParOps($rs);
-        while (sizeof($tab) > 6) {
-            array_pop($tab);
+        if($stop){
+            while (sizeof($tab) > 6) {
+                array_pop($tab);
+            }
         }
         return $tab;
     }
 
     //teus chauffeur mensuel
-    public function tcm($m = null , $y = null)
+    public function tcm($m = null , $y = null,$stop = true)
     {
 
         $cs = (new Chauffeurs())->findAll();
@@ -131,8 +133,10 @@ class SuperAdmin extends BaseController
         }
 
         $tab = $this->trierParTeus($rs);
-        while (sizeof($tab) > 6) {
-            array_pop($tab);
+        if($stop){
+            while (sizeof($tab) > 6) {
+                array_pop($tab);
+            }
         }
         return $tab;
     }

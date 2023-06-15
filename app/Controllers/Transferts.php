@@ -19,7 +19,8 @@ class Transferts extends BaseController
             ->where('eirs','NON OK')
             ->orWhere('type','')
             ->orWhere('type',null)
-            ->findAll()
+            ->findAll(),
+            'dt' => (new ModelsTransferts())->where('MONTH(date_mvt)',date('m'))->find()
         ];
         return view('utils/transferts/dashboard', $data);
     }

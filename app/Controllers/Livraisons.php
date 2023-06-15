@@ -23,7 +23,8 @@ class Livraisons extends BaseController
                 ->orWhere('mvt_retour', null)
                 ->findAll(),
             'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
+            'dl' => (new ModelsLivraisons())->where('MONTH(date_livraison)',date('m'))->find()
         ];
 
         return view('utils/livraisons/dashboard', $data);

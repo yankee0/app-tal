@@ -209,7 +209,7 @@ class Rapports extends BaseController
                 ->find();
             $sumGars = 0;
             foreach ($gars as $gar) {
-                $sumGars += $gar['total'];
+                $sumGars += intval($gar['total']);
             }
             // dd($sumGars);
 
@@ -267,7 +267,7 @@ class Rapports extends BaseController
 
         switch ($type) {
             case 'chauffeur':
-                $data = (new SuperAdmin)->tcm($m, $y);
+                $data = (new SuperAdmin)->tcm($m, $y,false);
                 return view('utils/rapports/tmc', [
                     'cs' => $data,
                     'filename' => 'CLASSEMENT_CHAUFFEUR_TEUS_TRANSFERT_MENSUEL_' . $m . '_' . $y
@@ -276,7 +276,7 @@ class Rapports extends BaseController
                 break;
 
             default:
-                $data = (new SuperAdmin)->mcm($m, $y);
+                $data = (new SuperAdmin)->mcm($m, $y,false);
                 // dd($data);
                 return view('utils/rapports/mcm', [
                     'ts' => $data,
