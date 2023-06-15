@@ -111,7 +111,7 @@ Livraisons
 
   </div>
   <div class="row">
-    <div class="col-12">
+    <div class="col-md-6">
       <div class="card mt-4">
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
@@ -148,6 +148,141 @@ Livraisons
             </thead>
             <tbody>
               <?php foreach ($ls as $l) : ?>
+                <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['date_depot_bl'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['date_validite'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['date_livraison'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['conteneur'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['armateur'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['type_tc'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['tracteur'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['chauffeur_aller'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['mvt_aller'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['adresse'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['zone'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['client'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['date_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['chauffeur_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['mvt_retour'] ?>
+                    </div>
+                  </td>
+                  <td class="align-middle">
+                    <div class="d-flex align-items-center gap-3">
+                      <span>
+                        <a href="<?= base_url(session()->root . '/livraisons/supprimer?id=' . $l['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'livraison">
+                          Supprimer
+                        </a>
+                      </span>
+                      <span>
+                        <a href="<?= base_url(session()->root . '/livraisons/modifier/' . $l['id']) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'livraison">
+                          Modifier
+                        </a>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              <?php endforeach ?>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="d-block d-md-flex justify-content-between">
+            <h5 class="card-title">Livraisons du mois</h5>
+            <form action="<?= base_url(session()->root . '/livraisons/recherche') ?>" method="post">
+              <?= csrf_field() ?>
+              <div class="mb-3 d-flex">
+                <input type="search" class="form-control" name="r" id="r" aria-describedby="" placeholder="Rechecher...">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="table-responsive p-0">
+          <table class="table align-items-center mb-0">
+            <thead>
+              <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Zone</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
+                <th class="text-secondary opacity-7"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($dl as $l) : ?>
                 <tr>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
