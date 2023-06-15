@@ -209,7 +209,7 @@ class Rapports extends BaseController
                 ->find();
             $sumGars = 0;
             foreach ($gars as $gar) {
-                $sumGars += $gar['total'];
+                $sumGars += intval($gar['total']);
             }
             // dd($sumGars);
 
