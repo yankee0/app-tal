@@ -69,6 +69,7 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
     $routes->group('garage', function ($routes) {
         $routes->get('/', 'Garage::index');
         $routes->post('/', 'Garage::save');
+        $routes->get('supprimer/(:segment)','Garage::delete/$1');
     });
 
     $routes->group('carburant', function ($routes) {
@@ -148,6 +149,7 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->group('garage', function ($routes) {
         $routes->get('/', 'Garage::index');
         $routes->post('/', 'Garage::save');
+        $routes->get('supprimer/(:segment)','Garage::delete/$1');
     });
 
     $routes->group('carburant', function ($routes) {

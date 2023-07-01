@@ -55,7 +55,7 @@ Garage
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md text-left" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                      <h5 class="modal-title" id="modalTitleId">Confirmation</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -79,6 +79,56 @@ Garage
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div class="row">
+                <div class="card mt-4">
+                  <div class="card-body">
+                    <div class="d-block d-md-flex justify-content-between">
+                      <h5 class="card-title">Exports en attente des informations de retour</h5>
+                      <form action="<?= base_url(session()->root . '/exports/recherche') ?>" method="post">
+                        <?= csrf_field() ?>
+                        <div class="mb-3">
+                          <input type="search" class="form-control" name="r" id="r" aria-describedby="" placeholder="Rechecher...">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                      <thead>
+                        <tr>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Véhicule</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Montant</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaires</th>
+                          <th class="text-secondary opacity-7"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <?php foreach ($gs as $g) : ?>
+                          <tr>
+                            <td><?= $g['date'] ?></td>
+                            <td><?= $g['chrono'] ?></td>
+                            <td><?= $g['total'] ?></td>
+                            <td><?= $g['commentaire'] ?></td>
+                            <td>
+                              <span>
+                                <a href="<?= base_url(session()->root . '/garage/supprimer/' . $g['id'])?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'export">
+                                  Supprimer
+                                </a>
+                              </span>
+                            </td>
+                          </tr>
+                        <?php endforeach ?>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
               </div>
 
 

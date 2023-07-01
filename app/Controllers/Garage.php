@@ -14,7 +14,8 @@ class Garage extends BaseController
         session()->p = 'garage';
         $data = [
             'trs' => (new Tracteurs())->findAll(),
-            'rms' => (new Remorques())->findAll()
+            'rms' => (new Remorques())->findAll(),
+            'gs' => (new ModelsGarage())->limit(30)->findAll(),
         ];
         return view('utils/garage/dashboard', $data);
     }
@@ -27,11 +28,26 @@ class Garage extends BaseController
                 ->back()
                 ->with('notif', true)
                 ->with('message', 'Enregistrement réussi.');
-        }else {
+        } else {
             return redirect()
                 ->back()
                 ->with('notif', false)
                 ->with('message', 'Echec de l\'enregistrement.');
+        }
+    }
+
+    public function delete($id)
+    {
+        if ((new ModelsGarage())->delete($id)) {
+            return redirect()
+                ->back()
+                ->with('notif', true)
+                ->with('message', 'Suppression réussie.');
+        } else {
+            return redirect()
+                ->back()
+                ->with('notif', false)
+                ->with('message', 'Echec de la suppression.');
         }
     }
 }
