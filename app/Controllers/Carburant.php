@@ -15,6 +15,7 @@ class Carburant extends BaseController
         $data = [
             'trs' => (new Tracteurs())->findAll(),
             'rms' => (new Remorques())->where('type','HAMMAR')->find(),
+            'cs' => (new ModelsCarburant())->limit(30)->findAll(),
         ];
 
         return view('utils/carburant/dashboard',$data);
@@ -33,6 +34,21 @@ class Carburant extends BaseController
                 ->back()
                 ->with('notif', false)
                 ->with('message', 'Echec de l\'enregistrement.');
+        }
+    }
+
+    public function delete($id)
+    {
+        if ((new ModelsCarburant())->delete($id)) {
+            return redirect()
+                ->back()
+                ->with('notif', true)
+                ->with('message', 'Suppression réussie.');
+        } else {
+            return redirect()
+                ->back()
+                ->with('notif', false)
+                ->with('message', 'Echec de la suppression.');
         }
     }
 }

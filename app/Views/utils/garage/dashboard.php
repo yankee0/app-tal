@@ -85,7 +85,7 @@ Garage
                 <div class="card mt-4">
                   <div class="card-body">
                     <div class="d-block d-md-flex justify-content-between">
-                      <h5 class="card-title">Exports en attente des informations de retour</h5>
+                      <h5 class="card-title">Derniers enregistrements</h5>
                       <form action="<?= base_url(session()->root . '/exports/recherche') ?>" method="post">
                         <?= csrf_field() ?>
                         <div class="mb-3">
