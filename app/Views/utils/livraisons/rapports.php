@@ -28,6 +28,7 @@ Livraisons rapport
           <table id="tableau" class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
@@ -48,6 +49,11 @@ Livraisons rapport
             <tbody>
               <?php foreach ($ls as $l) : ?>
                 <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['type'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['date_depot_bl'] ?>

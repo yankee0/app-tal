@@ -19,6 +19,14 @@ Livraisons
         <div class="card-body">
           <h5 class="card-title">Ajouter une livraison</h5>
           <div class="row">
+            <div class="mb-3">
+              <label for="type" class="form-label">Type de livraisons</label>
+              <select class="form-select" name="type" id="type">
+                <option selected hidden>Sélectionner</option>
+                <option value="TOM">TOM</option>
+                <option value="TIERS">TIERS</option>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_depot_bl" class="form-label">Date de BL</label>
               <input type="date" class="form-control" name="date_depot_bl" id="date_depot_bl" aria-describedby="helpId" required>
@@ -128,6 +136,7 @@ Livraisons
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
@@ -149,6 +158,11 @@ Livraisons
             <tbody>
               <?php foreach ($ls as $l) : ?>
                 <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['type'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['date_depot_bl'] ?>
@@ -263,6 +277,7 @@ Livraisons
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
@@ -284,6 +299,11 @@ Livraisons
             <tbody>
               <?php foreach ($dl as $l) : ?>
                 <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['type'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['date_depot_bl'] ?>

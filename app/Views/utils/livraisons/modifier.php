@@ -19,6 +19,14 @@ Livraisons
         <div class="card-body">
           <h5 class="card-title">Modifier livraison</h5>
           <div class="row">
+          <div class="mb-3">
+              <label for="type" class="form-label">Type de livraisons</label>
+              <select class="form-select" name="type" id="type">
+                <option selected hidden>Sélectionner</option>
+                <option <?= $l['type'] == 'TOM' ? 'selected' : '' ?> value="TOM">TOM</option>
+                <option <?= $l['type'] == 'TIERS' ? 'selected' : '' ?> value="TIERS">TIERS</option>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_depot_bl" class="form-label">Date de BL</label>
               <input value="<?= set_value('date_depot_bl', $l['date_depot_bl']) ?>" type="date" class="form-control" name="date_depot_bl" id="date_depot_bl" aria-describedby="helpId" required>
