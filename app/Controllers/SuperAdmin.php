@@ -15,9 +15,9 @@ class SuperAdmin extends BaseController
     {
         session()->p = 'dashboard';
         return view('superadmin/dashboard', [
-            'l' => (new Livraisons())->countAll(),
-            't' => (new Transferts())->countAll(),
-            'e' => (new Exports())->countAll(),
+            'l' => (new Livraisons())->where('MONTH(date_livraison)',date('m',time()))->countAllResults(),
+            't' => (new Transferts())->where('MONTH(date_mvt)',date('m',time()))->countAllResults(),
+            'e' => (new Exports())->where('MONTH(date_posit)',date('m',time()))->countAllResults(),
             'c' => (new Tracteurs())->countAll(),
             'tcm' => $this->tcm(),
             'mcm' => $this->mcm()
