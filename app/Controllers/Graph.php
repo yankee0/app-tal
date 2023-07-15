@@ -23,8 +23,23 @@ class Graph extends BaseController
             $tableauResultatsTransfert[$mois] = $nombreTransferts;
         }
 
+        $res = [
+            'Jan' => $tableauResultatsTransfert[1],
+            'Fév' => $tableauResultatsTransfert[2],
+            'Mar' => $tableauResultatsTransfert[3],
+            'Avr' => $tableauResultatsTransfert[4],
+            'Mai' => $tableauResultatsTransfert[5],
+            'Jui' => $tableauResultatsTransfert[6],
+            'Jlt' => $tableauResultatsTransfert[7],
+            'Aou' => $tableauResultatsTransfert[8],
+            'Sep' => $tableauResultatsTransfert[9],
+            'Oct' => $tableauResultatsTransfert[10],
+            'Nov' => $tableauResultatsTransfert[11],
+            'Déc' => $tableauResultatsTransfert[12],
+        ];
+
         $donnee = [
-            't' => $tableauResultatsTransfert
+            't' => $res
         ];
         $this->response->setJSON($donnee);
         $this->response->send();
