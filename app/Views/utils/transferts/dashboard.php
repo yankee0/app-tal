@@ -52,6 +52,8 @@ Tranferts
                 <option class="teus2" value="40">40 DV</option>
                 <option class="teus2" value="40">40 HC</option>
                 <option class="teus2" value="40">40 RF</option>
+                <option class="teus2" value="40">40 FL</option>
+                <option class="teus2" value="40">40 OT</option>
               </select>
             </div>
             <div class="mb-3 col-md-4">
@@ -356,5 +358,43 @@ Tranferts
       </div>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#type_transfert').change(function(e) {
+        e.preventDefault();
+
+        if ($(this).val() == 'FULL IMPORT') {
+          $('#ligne').val('MSC');
+          $('#p_v').val('PLEIN');
+          $('#mouvement').val('ENTREE PORTE');
+        }
+
+        if ($(this).val() == 'VIDE') {
+          $('#ligne').val('MSC');
+          $('#p_v').val('VIDE');
+
+        }
+
+        if ($(this).val() == 'FULL EXPORT') {
+          $('#ligne').val('MSC');
+          $('#p_v').val('PLEIN');
+          $('#mouvement').val('SORTIE PORTE');
+        }
+      });
+
+      $('#type_conteneur').change(function(e) {
+        e.preventDefault();
+
+        if ($(this).val() == 20) {
+          $('#teus').val(1);
+        } else {
+          $('#teus').val(2);
+
+        }
+      });
+
+    });
+  </script>
 
   <?= $this->endSection(); ?>

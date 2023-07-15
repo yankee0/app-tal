@@ -96,7 +96,7 @@ class Transferts extends BaseController
             ->where('conteneur', $check['conteneur'])
             ->where('type_transfert', $check['type_transfert'])
             ->find();
-        if (sizeof($occ) != 0) {
+        if (sizeof($occ) > 1) {
             return redirect()
                 ->back()
                 ->withInput()
