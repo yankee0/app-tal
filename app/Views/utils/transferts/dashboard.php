@@ -58,7 +58,7 @@ Tranferts
             </div>
             <div class="mb-3 col-md-4">
               <label for="teus" class="form-label">TEUS</label>
-              <input type="number" class="form-control" name="teus" id="teus" aria-describedby="helpId" placeholder="">
+              <input type="number" class="form-control" name="teus" id="teus" min="1" max="2" required aria-describedby="helpId" placeholder="">
             </div>
             <div class="mb-3 col-md-4">
               <label for="ligne" class="form-label">Ligne</label>
