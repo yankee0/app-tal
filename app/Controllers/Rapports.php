@@ -221,7 +221,7 @@ class Rapports extends BaseController
                 ->find();
             $sumTeus = 0;
             foreach ($teuss as $teus) {
-                $sumTeus += $teus['teus'];
+                $sumTeus += $teus['type_conteneur'] == '20' ? 1 : 2;
             }
             // dd($sumTeus);
 
