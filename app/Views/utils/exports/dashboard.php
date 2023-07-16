@@ -247,13 +247,12 @@ Exports
                 </tr>
               <?php endforeach; ?>
 
-
-
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    
     <div class="col-md-6">
       <div class="card mt-4">
         <div class="card-body">

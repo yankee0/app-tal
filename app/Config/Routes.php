@@ -111,6 +111,8 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
         $routes->post('tracteurs', 'Rapports::genTrac');
         $routes->post('class', 'Rapports::genClass');
     });
+
+    
 });
 
 //admin
@@ -183,6 +185,7 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
         $routes->post('modifier', 'Exports::save');
     });
 });
+
 //OPS
 $routes->group('ops', ['filter' => 'ops'], function ($routes) {
 
@@ -212,6 +215,9 @@ $routes->group('ops', ['filter' => 'ops'], function ($routes) {
         $routes->get('modifier/(:segment)', 'Exports::edit/$1');
         $routes->post('modifier', 'Exports::save');
     });
+
+    $routes->get('archives','Archives::index');
+    $routes->post('archives','Archives::generate');
 });
 
 //facturation
