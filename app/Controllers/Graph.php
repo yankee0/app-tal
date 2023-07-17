@@ -11,9 +11,9 @@ class Graph extends BaseController
     {
         //Transferts
         $modelTransfert = new Transferts();
-        $query = $modelTransfert->select('MONTH(created_at) AS mois, COUNT(*) AS nombre_Transferts')
-            ->where('created_at >= DATE_FORMAT(NOW(), "%Y-01-01")')
-            ->groupBy('MONTH(created_at)')
+        $query = $modelTransfert->select('MONTH(date_mvt) AS mois, COUNT(*) AS nombre_Transferts')
+            ->where('date_mvt >= DATE_FORMAT(NOW(), "%Y-01-01")')
+            ->groupBy('MONTH(date_mvt)')
             ->get();
         $resultats = $query->getResultArray();
         $tableauResultatsTransfert = array_fill(1, 12, 0);

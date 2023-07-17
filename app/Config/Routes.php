@@ -112,7 +112,8 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
         $routes->post('class', 'Rapports::genClass');
     });
 
-    
+    $routes->get('archives','Archives::index');
+    $routes->post('archives','Archives::generate');
 });
 
 //admin
