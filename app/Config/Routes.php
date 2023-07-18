@@ -114,6 +114,7 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
 
     $routes->get('archives','Archives::index');
     $routes->post('archives','Archives::generate');
+    $routes->get('suivi-flotte','Suivi::index');
 });
 
 //admin
@@ -185,6 +186,9 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
         $routes->get('modifier/(:segment)', 'Exports::edit/$1');
         $routes->post('modifier', 'Exports::save');
     });
+
+    $routes->get('suivi-flotte','Suivi::index');
+
 });
 
 //OPS
