@@ -56,7 +56,7 @@ Suivi Flotte
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 mb-3">
+    <div class="col-12 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité VT inférieures à 20jours</h4>
@@ -109,7 +109,7 @@ Suivi Flotte
       </div>
 
     </div>
-    <div class="col-md-6 mb-3">
+    <div class="col-12 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité AS inférieures à 20jours</h4>
@@ -162,7 +162,7 @@ Suivi Flotte
       </div>
 
     </div>
-    <div class="col-md-6 mb-3">
+    <div class="col-12 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité CATs inférieures à 20jours</h4>
