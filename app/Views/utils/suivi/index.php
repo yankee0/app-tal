@@ -56,96 +56,164 @@ Suivi Flotte
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 mb-3">
+    <div class="col-md-6 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité VT inférieures à 20jours</h4>
         </div>
         <div class="card-body">
-          <div class="container-fluid">
+          <h5>Tracteurs</h5>
+          <div class="container-fluid mb-3">
             <div class="row">
-              <div class="col-md">
-                <div class="h5">Tracteurs</div>
-                <div class="row">
-                  <?php foreach ($deadASTracs as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php foreach ($deadVTTracs as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-truck text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md">
-                <div class="h5">Remorques</div>
-                <div class="row">
-                  <?php foreach ($deadASRems as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php endforeach ?>
+            </div>
+          </div>
+
+          <h5>Remorques</h5>
+          <div class="container-fluid mb-3">
+            <div class="row">
+              <?php foreach ($deadVTRems as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-trailer text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
+              <?php endforeach ?>
             </div>
           </div>
         </div>
       </div>
+
     </div>
-    <div class="col-md-12 mb-3">
+    <div class="col-md-6 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité AS inférieures à 20jours</h4>
         </div>
         <div class="card-body">
-          <div class="container-fluid">
+          <h5>Tracteurs</h5>
+          <div class="container-fluid mb-3">
             <div class="row">
-              <div class="col-md">
-                <div class="h5">Tracteurs</div>
-                <div class="row">
-                  <?php foreach ($deadVTTracs as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php foreach ($deadASTracs as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-truck text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md">
-                <div class="h5">Remorques</div>
-                <div class="row">
-                  <?php foreach ($deadVTRems as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php endforeach ?>
+            </div>
+          </div>
+
+          <h5>Remorques</h5>
+          <div class="container-fluid mb-3">
+            <div class="row">
+              <?php foreach ($deadASRems as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-trailer text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
+              <?php endforeach ?>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row gap-3">
 
-    <div class="col-md-12 mb-3">
+    </div>
+    <div class="col-md-6 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité CATs inférieures à 20jours</h4>
         </div>
         <div class="card-body">
-          <div class="container-fluid">
+          <h5>Tracteurs</h5>
+          <div class="container-fluid mb-3">
             <div class="row">
-              <div class="col-md">
-                <div class="h5">Tracteurs</div>
-                <div class="row">
-                  <?php foreach ($deadCATTracs as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php foreach ($deadCATTracs as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-truck text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md">
-                <div class="h5">Remorques</div>
-                <div class="row">
-                  <?php foreach ($deadCATRems as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
+              <?php endforeach ?>
+            </div>
+          </div>
+
+          <h5>Remorques</h5>
+          <div class="container-fluid mb-3">
+            <div class="row">
+              <?php foreach ($deadCATRems as $i) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 row ">
+                  <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                    <div class="d-flex align-items-center">
+                      <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                        <i class="fa fa-trailer text-white opacity-10"></i>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <h6 class="mb-1 text-dark text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs"><?= $i['immatriculation'] ?></span></span>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
                 </div>
-              </div>
+              <?php endforeach ?>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
-</div>
-<?= $this->endSection(); ?>
+  <?= $this->endSection(); ?>
