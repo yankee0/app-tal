@@ -116,35 +116,7 @@ Suivi Flotte
     </div>
   </div>
   <div class="row gap-3">
-    <div class="col-md-12 mb-3">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Durée de validité VT inférieures à 20jours</h4>
-        </div>
-        <div class="card-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md">
-                <div class="h5">Tracteurs</div>
-                <div class="row">
-                  <?php foreach ($deadASTracs as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
-                </div>
-              </div>
-              <div class="col-md">
-                <div class="h5">Remorques</div>
-                <div class="row">
-                  <?php foreach ($deadASRems as $c) : ?>
-                    <div class="col-md-6"><?= $c['chrono'] ?></div>
-                  <?php endforeach ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="col-md-12 mb-3">
       <div class="card">
         <div class="card-header">
