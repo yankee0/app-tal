@@ -18,12 +18,12 @@ Garage
         <?= csrf_field() ?>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 col-xl-3 mb-3">
               <label for="date">Date:</label>
-              <input type="date" class="form-control" id="date" name="date">
+              <input type="date" class="form-control" id="date" name="date" required>
               <small class="form-text text-muted">Veuillez saisir la date.</small>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 col-xl-3 mb-3">
               <label>Chrono du véhicule</label>
               <select class="form-control" name="chrono" id="chrono" required>
                 <option hidden selected value="">Selectionner le chrono</option>
@@ -35,11 +35,20 @@ Garage
                 <?php endforeach ?>
               </select>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 col-xl-3 mb-3">
               <label for="total">Montant total:</label>
-              <input type="number" step="0.01" class="form-control" id="total" name="total">
+              <input type="number" step="0.01" class="form-control" id="total" name="total" required>
             </div>
-            <div class="col-md-12 mb-3">
+            <div class="col-md-6 col-xl-3">
+            <label for="intervention">Durée d'intervention:</label>
+              <input type="text" step="0.01" class="form-control" id="intervention" name="intervention" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="intervenants">Intervenant:</label>
+              <textarea class="form-control" id="intervenants" name="intervenants"></textarea>
+              <small class="form-text text-muted">Veuillez saisir le nom des intervenants.</small>
+            </div>
+            <div class="col-md-6 mb-3">
               <label for="commentaire">Commentaire pour la ou les pièces changées:</label>
               <textarea class="form-control" id="commentaire" name="commentaire"></textarea>
               <small class="form-text text-muted">Veuillez saisir le commentaire pour la ou les pièces changées.</small>
@@ -70,7 +79,13 @@ Garage
                         Montant: <span class="mMontant font-weight-bold text-primary"></span>
                       </p>
                       <p>
+                        Durée d'intervention: <span class="mDur font-weight-bold text-primary"></span>
+                      </p>
+                      <p>
                         Commentaire: <span class="mCom font-weight-bold text-primary"></span>
+                      </p>
+                      <p>
+                        Intervenants: <span class="mInt font-weight-bold text-primary"></span>
                       </p>
                     </div>
                     <div class="modal-footer">
@@ -101,6 +116,8 @@ Garage
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Véhicule</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Montant</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durée d'intervention</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenants</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaires</th>
                           <th class="text-secondary opacity-7"></th>
                         </tr>
@@ -112,6 +129,8 @@ Garage
                             <td><?= $g['date'] ?></td>
                             <td><?= $g['chrono'] ?></td>
                             <td><?= $g['total'] ?></td>
+                            <td><?= $g['intervention'] ?></td>
+                            <td><?= $g['intervenants'] ?></td>
                             <td><?= $g['commentaire'] ?></td>
                             <td>
                               <span>
@@ -163,6 +182,14 @@ Garage
     $('#commentaire').change(function(e) {
       e.preventDefault();
       $('.mCom').html($('#commentaire').val());
+    });
+    $('#intervention').change(function(e) {
+      e.preventDefault();
+      $('.mDur').html($('#intervention').val());
+    });
+    $('#intervenants').change(function(e) {
+      e.preventDefault();
+      $('.mInt').html($('#intervenants').val());
     });
   });
 </script>

@@ -42,7 +42,7 @@ Tranferts
             </div>
             <div class="mb-3 col-md-4">
               <label for="conteneur" class="form-label">Conteneur</label>
-              <input type="text" maxlength="11" minlength="11" class="form-control" name="conteneur" required id="conteneur" aria-describedby="helpId" placeholder="">
+              <input type="text" maxlength="11" required minlength="11" class="form-control" name="conteneur" required id="conteneur" aria-describedby="helpId" placeholder="">
             </div>
             <div class="mb-3 col-md-4">
               <label for="type_conteneur" class="form-label">Type conteneur</label>
@@ -58,7 +58,7 @@ Tranferts
             </div>
             <div class="mb-3 col-md-4">
               <label for="teus" class="form-label">TEUS</label>
-              <input type="number" class="form-control" name="teus" id="teus" min="1" max="2" required aria-describedby="helpId" placeholder="">
+              <input type="number" required class="form-control" name="teus" id="teus" min="1" max="2" required aria-describedby="helpId" placeholder="">
             </div>
             <div class="mb-3 col-md-4">
               <label for="ligne" class="form-label">Ligne</label>
@@ -78,7 +78,7 @@ Tranferts
             </div>
             <div class="mb-3 col-md-4">
               <label for="chauffeur_aller" class="form-label">Chauffeurs</label>
-              <select class="form-select tal" name="chauffeur" id="chauffeur_aller">
+              <select class="form-select tal" required name="chauffeur" id="chauffeur_aller">
                 <option selected hidden value="">Chauffeur TAL</option>
                 <?php foreach ($chauf as $c) : ?>
                   <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
@@ -87,7 +87,7 @@ Tranferts
             </div>
             <div class="mb-3 col-md-4 tal">
               <label for="tracteur" class="form-label">Tracteur</label>
-              <select class="form-select " name="tracteur" id="tracteur">
+              <select class="form-select " required name="tracteur" id="tracteur">
                 <option value="" selected hidden>Selectionnez un tracteur</option>
                 <?php foreach ($trac as $t) : ?>
                   <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>

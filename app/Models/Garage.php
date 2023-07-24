@@ -17,6 +17,8 @@ class Garage extends Model
         'date',
         'chrono',
         'commentaire',
+        'intervention',
+        'intervenants',
         'total',
     ];
 
