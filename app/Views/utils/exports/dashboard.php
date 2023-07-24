@@ -19,6 +19,15 @@ Exports
         <div class="card-body">
           <h5 class="card-title">Ajouter un export</h5>
           <div class="row">
+            <div class="mb-3 col-md-12">
+              <label for="type_operation" class="form-label">Type d'opération</label>
+              <select class="form-select" name="type_operation" id="type_operation" required>
+                <option value="" hidden selected>Sélectionner</option>
+                <option hidden>Sélectionnez le type</option>
+                <option value="TOM">TOM</option>
+                <option value="TIER">TIER</option>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_posit" class="form-label">Date Posit</label>
               <input type="date" class="form-control" name="date_posit">
@@ -134,6 +143,8 @@ Exports
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Op.</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
@@ -155,6 +166,11 @@ Exports
             <tbody>
               <?php foreach ($es as $e) : ?>
                 <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['type_operation'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['date_posit'] ?>
@@ -252,7 +268,7 @@ Exports
         </div>
       </div>
     </div>
-    
+
     <div class="col-md-6">
       <div class="card mt-4">
         <div class="card-body">
@@ -270,6 +286,8 @@ Exports
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Op.</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
@@ -291,6 +309,11 @@ Exports
             <tbody>
               <?php foreach ($de as $e) : ?>
                 <tr>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['type_operation'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['date_posit'] ?>

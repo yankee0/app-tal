@@ -19,6 +19,15 @@ Exports
         <div class="card-body">
           <h5 class="card-title">Modifier un export</h5>
           <div class="row">
+          <div class="mb-3 col-md-12">
+              <label for="type_operation" class="form-label">Type d'opération</label>
+              <select class="form-select" name="type_operation" id="type_operation" required>
+                <option value="" hidden selected>Sélectionner</option>
+                <option hidden>Sélectionnez le type</option>
+                <option <?= ($e['type_operation'] == 'TOM') ? 'selected' : '' ?> value="TOM">TOM</option>
+                <option <?= ($e['type_operation'] == 'TIER') ? 'selected' : '' ?> value="TIER">TIER</option>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_posit" class="form-label">Date Posit:</label>
               <input type="date" name="date_posit" class="form-control" id="date_posit" value="<?= set_value('date_posit', $e['date_posit']) ?>">

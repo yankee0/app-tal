@@ -28,6 +28,7 @@ Exports
           <table id="tableau" class="table align-items-center mb-0">
             <thead>
               <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Opération</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
@@ -48,6 +49,11 @@ Exports
             <tbody>
               <?php foreach ($es as $e) : ?>
                 <tr>
+                <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['type_operation'] ?>
+                    </div>
+                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['date_posit'] ?>

@@ -29,6 +29,7 @@ class Exports extends Model
         'remarques',
         'chauffeur_aller',
         'chauffeur_retour',
+        'type_operation'
     ];
 
     // Dates
