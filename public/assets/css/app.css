@@ -1,3 +1,24 @@
+*{
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo{
+  /* height: 100%; */
+  object-position: center center;
+  object-fit: cover; 
+}
+
+.sidenav-header{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  /* background-color: black; */
+  background-size: cover;
+  background-position: center center;
+  background-size: 120px;
+  background-repeat: no-repeat;
+}
+
 @keyframes fadein {
   0% {
     transform: translateY(1cm);

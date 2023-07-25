@@ -32,6 +32,8 @@ Garages
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaire</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durée d'intervention</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenants</th>
               </tr>
             </thead>
             <tbody>
@@ -55,6 +57,16 @@ Garages
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $g['total'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $g['intervention'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $g['intervenants'] ?>
                     </div>
                   </td>
                   

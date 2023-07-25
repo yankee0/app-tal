@@ -595,3 +595,6 @@ License - nucleoapp.com/license/
 
 
 /* all icon font classes list here */
+*{
+  font-family: Arial, Helvetica, sans-serif;
+ }

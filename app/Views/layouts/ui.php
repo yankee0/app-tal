@@ -34,6 +34,11 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url('assets/css/argon-dashboard.css?v=2.0.4') ?>" rel="stylesheet" />
   <link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
   <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
 
 </head>
@@ -53,12 +58,10 @@
   <?php endif ?>
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
   <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
-    <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="<?= base_url(session()->root) ?>">
-        <img src="<?= base_url('assets/img/logo.jpg') ?>" class="navbar-brand-img h-100" alt="Logo">
-        <span class="ms-1 font-weight-bold">TAL APP</span>
-      </a>
+    <div class="sidenav-header p-0" style="background-image: url(<?= base_url('assets/img/logo.jpg') ?>);">
+
+        <!-- <img src="" class="navbar-brand-img " id="logo" alt="Logo"> -->
+
     </div>
     <hr class="horizontal dark mt-0">
     <!-- <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main"> -->
