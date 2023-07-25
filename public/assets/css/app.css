@@ -1,18 +1,16 @@
-*{
- font-family: Arial, Helvetica, sans-serif;
-}
 
-#logo{
-  /* height: 100%; */
-  object-position: center center;
-  object-fit: cover; 
+
+#logoPic{
+  height: 80px;
+  margin: auto;
 }
 
 .sidenav-header{
   height: 100px;
   display: flex;
   align-items: center;
-  /* background-color: black; */
+  /* background-color: black;
+   */
   background-size: cover;
   background-position: center center;
   background-size: 120px;
