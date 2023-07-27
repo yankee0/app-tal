@@ -40,7 +40,7 @@ Dashboard
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Transferts</p>
                 <h5 class="font-weight-bolder">
-                  <?= $t ?>
+                  <?= $t['teus'] ?>
                 </h5>
               </div>
             </div>
