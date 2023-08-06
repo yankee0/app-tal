@@ -11,7 +11,7 @@ Dashboard
 <?= $this->section('main'); ?>
 <div class="container-fluid py-4">
   <div class="row mb-3">
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -32,7 +32,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -53,7 +53,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -74,7 +74,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6">
+    <div class="col-xl-3 col-md-6">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -98,7 +98,7 @@ Dashboard
   </div>
   <div class="row">
 
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-4 col-md-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -119,7 +119,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6">
+    <div class="col-xl-4 col-md-6">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
@@ -142,7 +142,7 @@ Dashboard
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6">
+    <div class="col-xl-4 col-md-6">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
