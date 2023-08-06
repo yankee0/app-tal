@@ -3,8 +3,10 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Carburant;
 use App\Models\Chauffeurs;
 use App\Models\Exports;
+use App\Models\Garage;
 use App\Models\Livraisons;
 use App\Models\Tracteurs;
 use App\Models\Transferts;
@@ -15,9 +17,11 @@ class SuperAdmin extends BaseController
     {
         session()->p = 'dashboard';
         return view('superadmin/dashboard', [
-            'l' => (new Livraisons())->where('MONTH(date_livraison)',date('m',time()))->countAllResults(),
-            't' => (new Transferts())->select('SUM(teus) as teus')->where('MONTH(date_mvt)',date('m',time()))->first(),
-            'e' => (new Exports())->where('MONTH(date_posit)',date('m',time()))->countAllResults(),
+            'dc' => (new Carburant())->select('SUM(litres)*640 as total')->where('MONTH(date)',date('m',time()))->where('YEAR(date)',date('Y',time()))->first()['total'],
+            'dg' => (new Garage())->select('SUM(total) as total')->where('MONTH(date)',date('m',time()))->where('YEAR(date)',date('Y',time()))->first()['total'],
+            'l' => (new Livraisons())->where('MONTH(date_livraison)',date('m',time()))->where('YEAR(date_livraison)',date('Y',time()))->countAllResults(),
+            't' => (new Transferts())->select('SUM(teus) as teus')->where('MONTH(date_mvt)',date('m',time()))->where('YEAR(date_mvt)',date('Y',time()))->first(),
+            'e' => (new Exports())->where('MONTH(date_posit)',date('m',time()))->where('YEAR(date_posit)',date('Y',time()))->countAllResults(),
             'c' => (new Tracteurs())->countAll(),
             'tcm' => $this->tcm(),
             'mcm' => $this->mcm()

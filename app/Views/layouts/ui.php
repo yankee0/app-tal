@@ -113,93 +113,93 @@
             <span class="nav-link-text ms-1">Chauffeurs</span>
           </a>
         </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'tracteurs') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/tracteurs') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-truck text-danger text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Tracteurs</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'remorques') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/remorques') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-trailer text-success text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Remorques</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'suivi-flotte') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/suivi-flotte') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-bell text-success text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Suivi Flotte</span>
-        </a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'tracteurs') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/tracteurs') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-truck text-danger text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Tracteurs</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'remorques') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/remorques') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-trailer text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Remorques</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'suivi-flotte') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/suivi-flotte') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-bell text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Suivi Flotte</span>
+          </a>
+        </li>
       <?php endif; ?>
       <?php if (
         session()->u['profil'] == 'SUPERADMIN'
         or session()->u['profil'] == 'GARAGISTE'
       ) : ?>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'garage') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/garage') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-tools text-warning text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Garage</span>
-        </a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'garage') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/garage') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-tools text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Garage</span>
+          </a>
+        </li>
       <?php endif; ?>
       <?php if (
         session()->u['profil'] == 'SUPERADMIN'
         or session()->u['profil'] == 'G. CARBURANT'
       ) : ?>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'carburant') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/carburant') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="fa fa-gas-pump text-info text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Carburant</span>
-        </a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'carburant') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/carburant') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-gas-pump text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Carburant</span>
+          </a>
+        </li>
       <?php endif; ?>
       <?php if (
         session()->u['profil'] == 'SUPERADMIN'
         or session()->u['profil'] == 'OPS'
       ) : ?>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'livraisons') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/livraisons') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-app text-info text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Livraisons</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'transferts') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/transferts') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-app text-warning text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Transferts</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'exports') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/exports') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-app text-success text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Exports</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link <?= (session()->p == 'archives') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/archives') ?>">
-          <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-app text-dark text-sm opacity-10"></i>
-          </div>
-          <span class="nav-link-text ms-1">Archives</span>
-        </a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'livraisons') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/livraisons') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Livraisons</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'transferts') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/transferts') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Transferts</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'exports') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/exports') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Exports</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= (session()->p == 'archives') ? 'active' : '' ?>" href="<?= base_url(session()->root . '/archives') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-dark text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Archives</span>
+          </a>
+        </li>
       <?php endif; ?>
     </ul>
     <!-- </div> -->
@@ -218,7 +218,7 @@
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            
+
           </div>
           <ul class="navbar-nav  justify-content-end gap-2">
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -329,6 +329,23 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var elementsAvecNombres = document.querySelectorAll('.num'); // Remplacez "votre-classe" par la classe appropriée
+
+      elementsAvecNombres.forEach(function(element) {
+        var texte = element.textContent;
+        if (!isNaN(texte)) {
+          var nombreAvecPoints = ajouterPoints(texte);
+          element.textContent = nombreAvecPoints;
+        }
+      });
+    });
+
+    function ajouterPoints(nombre) {
+      return nombre.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  </script>
 
   <!-- Optional: Place to the bottom of scripts -->
   <script>
