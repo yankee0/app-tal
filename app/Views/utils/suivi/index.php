@@ -11,7 +11,6 @@ Suivi Flotte
 <?= $this->section('main'); ?>
 <div class="container" style="height: 100vh;">
   <div class="row mb-3">
-
     <div class="col-sm-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
