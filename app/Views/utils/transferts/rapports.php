@@ -18,106 +18,102 @@ Tranferts
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
             <h5 class="card-title"><?= $filename ?></h5>
-            <button onclick="exportTableToExcel('tableau', '<?= $filename ?>')" type="button" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
-              <i class="align-middle" data-feather="download"></i>
-              <span>Télécharger en Excel</span>
-            </button>
           </div>
-        </div>
-        <div class="table-responsive p-0">
-          <table id="tableau" class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type conteneur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ligne</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rame</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mouvement</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">P/V</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeurs</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">tracteur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">EIRS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($ts as $t) : ?>
+          <div class="table-responsive p-0">
+            <table id="tableau" class="table align-items-center mb-0">
+              <thead>
                 <tr>
-
-
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['type_transfert'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['type'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['date_mvt'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['conteneur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['type_conteneur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['teus'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['ligne'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['rame'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['mouvement'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['p_v'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['chauffeur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['tracteur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $t['eirs'] ?>
-                    </div>
-                  </td>
-
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type conteneur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ligne</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rame</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mouvement</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">P/V</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeurs</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">tracteur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">EIRS</th>
                 </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($ts as $t) : ?>
+                  <tr>
+  
+  
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['type_transfert'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['type'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['date_mvt'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['conteneur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['type_conteneur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['teus'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['ligne'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['rame'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['mouvement'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['p_v'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['chauffeur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['tracteur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['eirs'] ?>
+                      </div>
+                    </td>
+  
+                  </tr>
+                <?php endforeach ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

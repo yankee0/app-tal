@@ -18,62 +18,58 @@ Tracteurs
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
             <h5 class="card-title"><?= $filename ?></h5>
-            <button onclick="exportTableToExcel('tableau', '<?= $filename ?>')" type="button" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
-              <i class="align-middle" data-feather="download"></i>
-              <span>Télécharger en Excel</span>
-            </button>
           </div>
-        </div>
-        <div class="table-responsive p-0">
-          <table id="tableau" class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Consommation carburant </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervention garage</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS transferts</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre de livraisons</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre d'export</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($ls as $l) : ?>
+          <div class="table-responsive p-0">
+            <table id="tableau" class="table align-items-center mb-0">
+              <thead>
                 <tr>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['chrono'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['carburant'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['garage'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['teus'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['livraisons'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['exports'] ?>
-                    </div>
-                  </td>
-                  
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Consommation carburant </th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervention garage</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">TEUS transferts</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre de livraisons</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre d'export</th>
                 </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($ls as $l) : ?>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['chrono'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['carburant'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['garage'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['teus'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['livraisons'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['exports'] ?>
+                      </div>
+                    </td>
+                    
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

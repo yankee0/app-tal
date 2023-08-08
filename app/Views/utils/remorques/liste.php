@@ -90,76 +90,70 @@ Remorques
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
             <h5 class="card-title">Liste des remorques</h5>
-            <form action="<?= base_url(session()->root . '/remorques/recherche') ?>" method="post">
-              <?= csrf_field() ?>
-              <div class="mb-3 d-flex">
-                <input type="search" class="form-control" name="r" id="r" aria-describedby="" placeholder="Rechecher...">
-              </div>
-            </form>
           </div>
-        </div>
-        <div class="table-responsive p-0">
-          <table class="table align-items-center justify-content-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorques</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CATs</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Remarque</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($rs as $r) : ?>
+          <div class="table-responsive p-0">
+            <table class="table align-items-center justify-content-center mb-0">
+              <thead>
                 <tr>
-                  <td>
-                    <div class="d-flex px-2 gap-2 d-flex align-items-center ">
-                      <div>
-                        <i class="fa fa-truck px-2" aria-hidden="true"></i>
-                      </div>
-                      <div class="my-auto">
-                        <h6 class="mb-0 text-sm"><?= $r['chrono'] ?></h6>
-                        <h5 class="mb-0 text-sm text-secondary"><?= $r['immatriculation'] ?></h5>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['immatriculation'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['chassis'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['type'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['fin_vt'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['fin_as'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['fin_cats'] ?></span>
-                  </td>
-                  <td>
-                    <span class="text-xs font-weight-bold"><?= $r['remarque'] ?></span>
-                  </td>
-                  <td class="align-middle">
-                    <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/remorques/modifier/' . $r['id']) ?>">
-                      <i class="fa fa-edit text-xs"></i> Modifier
-                    </a>
-                    <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/remorques/supprimer?id=' . $r['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>">
-                      <i class="fa fa-trash text-danger text-xs"></i> Supprimer
-                    </a>
-                  </td>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorques</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Visite technique</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Assurances</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">CATs</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Remarque</th>
+                  <th></th>
                 </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($rs as $r) : ?>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 gap-2 d-flex align-items-center ">
+                        <div>
+                          <i class="fa fa-truck px-2" aria-hidden="true"></i>
+                        </div>
+                        <div class="my-auto">
+                          <h6 class="mb-0 text-sm"><?= $r['chrono'] ?></h6>
+                          <h5 class="mb-0 text-sm text-secondary"><?= $r['immatriculation'] ?></h5>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['immatriculation'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['chassis'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['type'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['fin_vt'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['fin_as'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['fin_cats'] ?></span>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['remarque'] ?></span>
+                    </td>
+                    <td class="align-middle">
+                      <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/remorques/modifier/' . $r['id']) ?>">
+                        <i class="fa fa-edit text-xs"></i> Modifier
+                      </a>
+                      <a class="btn btn-link text-secondary mb-0" href="<?= base_url(session()->root . '/remorques/supprimer?id=' . $r['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>">
+                        <i class="fa fa-trash text-danger text-xs"></i> Supprimer
+                      </a>
+                    </td>
+                  </tr>
+                <?php endforeach ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

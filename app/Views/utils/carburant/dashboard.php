@@ -83,44 +83,38 @@ Carburant
                   <div class="card-body">
                     <div class="d-block d-md-flex justify-content-between">
                       <h5 class="card-title">Derniers enregistrements</h5>
-                      <form action="<?= base_url(session()->root . '/exports/recherche') ?>" method="post">
-                        <?= csrf_field() ?>
-                        <div class="mb-3">
-                          <input type="search" class="form-control" name="r" id="r" aria-describedby="" placeholder="Rechecher...">
-                        </div>
-                      </form>
                     </div>
-                  </div>
-                  <div class="table-responsive p-0">
-                    <table class="table align-items-center mb-0">
-                      <thead>
-                        <tr>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Véhicule</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Litres</th>
-                          <th class="text-secondary opacity-7"></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-                        <?php foreach ($cs as $c) : ?>
+                    <div class="table-responsive p-0">
+                      <table class="table align-items-center mb-0">
+                        <thead>
                           <tr>
-                            <td><?= $c['date'] ?></td>
-                            <td><?= $c['chrono'] ?></td>
-                            <td><?= $c['litres'] ?></td>
-                            <td>
-                              <span>
-                                <a href="<?= base_url(session()->root . '/carburant/supprimer/' . $c['id'])?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'export">
-                                  Supprimer
-                                </a>
-                              </span>
-                            </td>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Véhicule</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Litres</th>
+                            <th class="text-secondary opacity-7"></th>
                           </tr>
-                        <?php endforeach ?>
+                        </thead>
+                        <tbody>
+
+                          <?php foreach ($cs as $c) : ?>
+                            <tr>
+                              <td><?= $c['date'] ?></td>
+                              <td><?= $c['chrono'] ?></td>
+                              <td><?= $c['litres'] ?></td>
+                              <td>
+                                <span>
+                                  <a href="<?= base_url(session()->root . '/carburant/supprimer/' . $c['id']) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'export">
+                                    Supprimer
+                                  </a>
+                                </span>
+                              </td>
+                            </tr>
+                          <?php endforeach ?>
 
 
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 

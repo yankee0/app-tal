@@ -68,53 +68,48 @@ Utilisateurs
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
             <h5 class="card-title">Liste des utilisateurs</h5>
-            <form action="<?= base_url(session()->root . '/utilisateurs/recherche') ?>" method="post">
-              <?= csrf_field() ?>
-              <div class="mb-3 d-flex">
-                <input type="search" class="form-control" name="r" id="r" aria-describedby="" placeholder="Rechecher...">
-              </div>
-            </form>
+          </div>
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Utilisateurs</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matricule</th>
+                  <th class="text-secondary opacity-7"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($us as $u) : ?>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1 gap-2">
+                        <div class="d-flex flex-column justify-content-center">
+                          <i class="fa fa-user text-dark px-2" aria-hidden="true"></i>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm"><?= $u['nom'] ?></h6>
+                          <p class="text-xs text-secondary mb-0"><?= $u['profil'] ?></p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $u['matricule'] ?>
+                      </div>
+                    </td>
+                    <td class="align-middle ">
+                      <a href="<?= base_url(session()->root . '/utilisateurs/supprimer?id=' . $u['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'utilisateur">
+                        Supprimer
+                      </a>
+                    </td>
+                  </tr>
+                <?php endforeach ?>
+
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="table-responsive p-0">
-          <table class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Utilisateurs</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matricule</th>
-                <th class="text-secondary opacity-7"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($us as $u) : ?>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1 gap-2">
-                      <div class="d-flex flex-column justify-content-center">
-                        <i class="fa fa-user text-dark px-2" aria-hidden="true"></i>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm"><?= $u['nom'] ?></h6>
-                        <p class="text-xs text-secondary mb-0"><?= $u['profil'] ?></p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="">
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $u['matricule'] ?>
-                    </div>
-                  </td>
-                  <td class="align-middle ">
-                    <a href="<?= base_url(session()->root . '/utilisateurs/supprimer?id=' . $u['id'] . '&' . csrf_token() . '=' . csrf_hash()) ?>" class="link text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Supprimer l'utilisateur">
-                      Supprimer
-                    </a>
-                  </td>
-                </tr>
-              <?php endforeach ?>
 
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   </div>

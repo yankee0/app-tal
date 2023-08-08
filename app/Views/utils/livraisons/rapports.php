@@ -18,123 +18,119 @@ Livraisons rapport
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
             <h5 class="card-title"><?= $filename ?></h5>
-            <button onclick="exportTableToExcel('tableau', '<?= $filename ?>')" type="button" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
-              <i class="align-middle" data-feather="download"></i>
-              <span>Télécharger en Excel</span>
-            </button>
           </div>
-        </div>
-        <div class="table-responsive p-0">
-          <table id="tableau" class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Zone</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($ls as $l) : ?>
+          <div class="table-responsive p-0">
+            <table id="tableau" class="table align-items-center mb-0">
+              <thead>
                 <tr>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['type'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['date_depot_bl'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['date_validite'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['date_livraison'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['conteneur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['armateur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['type_tc'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['tracteur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['chauffeur_aller'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['mvt_aller'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['adresse'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['zone'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['client'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['date_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['chauffeur_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $l['mvt_retour'] ?>
-                    </div>
-                  </td>
-
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Zone</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
                 </tr>
-              <?php endforeach ?>
-
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($ls as $l) : ?>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['type'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['date_depot_bl'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['date_validite'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['date_livraison'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['conteneur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['armateur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['type_tc'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['tracteur'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['chauffeur_aller'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['mvt_aller'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['adresse'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['zone'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['client'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['date_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['chauffeur_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['mvt_retour'] ?>
+                      </div>
+                    </td>
+  
+                  </tr>
+                <?php endforeach ?>
+  
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -23,57 +23,57 @@ Garages
               <span>Télécharger en Excel</span>
             </button>
           </div>
-        </div>
-        <div class="table-responsive p-0">
-          <table id="tableau" class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaire</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durée d'intervention</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenants</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($gs as $g) : ?>
+          <div class="table-responsive p-0">
+            <table id="tableau" class="table align-items-center mb-0">
+              <thead>
                 <tr>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['date'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['chrono'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['commentaire'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['total'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['intervention'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $g['intervenants'] ?>
-                    </div>
-                  </td>
-                  
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chrono</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaire</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durée d'intervention</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenants</th>
                 </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($gs as $g) : ?>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['date'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['chrono'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['commentaire'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['total'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['intervention'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $g['intervenants'] ?>
+                      </div>
+                    </td>
+                    
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
