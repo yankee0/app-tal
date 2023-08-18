@@ -96,7 +96,7 @@ Dashboard
       </div>
     </div>
   </div>
-  <?php if (session()->u['matricule'] == 'TAL001') : ?>
+  <?php if (session()->u['matricule'] == 'TAL001' or session()->u['matricule'] == 'TALXXX' or session()->u['matricule'] == 'DEXTAL') : ?>
     <div class="row">
       <div class="col-xl-4 col-md-6 mb-xl-0 mb-4">
         <div class="card">
