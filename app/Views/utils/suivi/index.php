@@ -55,25 +55,30 @@ Suivi Flotte
     </div>
   </div>
   <div class="row">
+    <div class="col-12">
+      <div class="alert bg-gradient-danger text-white">Véhicule en rouge : VT, AS ou CAT expiré</div>
+    </div>
     <div class="col-12 mb-3">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Durée de validité VT inférieures à 20jours</h4>
         </div>
         <div class="card-body">
+          <p>
+          </p>
           <h5>Tracteurs</h5>
           <div class="container-fluid mb-3">
             <div class="row">
               <?php foreach ($deadVTTracs as $i) : ?>
-                <div class="col-sm-6 col-md-4 col-lg-3 row <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>">
+                <div class="col-sm-6 col-md-4 col-lg-3 row <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-truck text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
@@ -90,12 +95,12 @@ Suivi Flotte
                 <div class="col-sm-6 col-md-4 col-lg-3 row ">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-trailer text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
@@ -121,12 +126,12 @@ Suivi Flotte
                 <div class="col-sm-6 col-md-4 col-lg-3 row ">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-truck text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
@@ -143,12 +148,12 @@ Suivi Flotte
                 <div class="col-sm-6 col-md-4 col-lg-3 row ">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-trailer text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
@@ -174,12 +179,12 @@ Suivi Flotte
                 <div class="col-sm-6 col-md-4 col-lg-3 row ">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-truck text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
@@ -196,12 +201,12 @@ Suivi Flotte
                 <div class="col-sm-6 col-md-4 col-lg-3 row ">
                   <div class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                     <div class="d-flex align-items-center">
-                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
+                      <div class="icon  icon-shape icon-sm me-3 bg-gradient-dark <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'bg-danger' : '' ?> shadow text-center">
                         <i class="fa fa-trailer text-white opacity-10"></i>
                       </div>
                       <div class="d-flex flex-column">
-                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
-                        <span class="text-xs <?= strtotime($i['fin_vt']) < strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
+                        <h6 class="mb-1 text-uppercase <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?> text-sm"><?= $i['chrono'] ?></h6>
+                        <span class="text-xs <?= strtotime($i['fin_vt']) <= strtotime(date('Y-m-d')) ? 'text-danger' : '' ?>"><?= $i['immatriculation'] ?></span></span>
                       </div>
                     </div>
                     </li>
