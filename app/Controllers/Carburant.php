@@ -15,7 +15,7 @@ class Carburant extends BaseController
         $data = [
             'trs' => (new Tracteurs())->findAll(),
             'rms' => (new Remorques())->where('type','HAMMAR')->find(),
-            'cs' => (new ModelsCarburant())->limit(30)->findAll(),
+            'cs' => (new ModelsCarburant())->findAll(),
         ];
 
         return view('utils/carburant/dashboard',$data);
