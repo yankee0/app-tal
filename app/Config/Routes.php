@@ -50,6 +50,14 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
         $routes->post('modifier', 'Chauffeurs::save');
     });
 
+    $routes->group('transporteurs', function ($routes) {
+        $routes->get('/', 'Transporteurs::list');
+        $routes->post('/', 'Transporteurs::create');
+        $routes->get('supprimer', 'Transporteurs::delete');
+        $routes->get('modifier/(:segment)', 'Transporteurs::edit/$1');
+        $routes->post('modifier', 'Transporteurs::save');
+    });
+
     $routes->group('tracteurs', function ($routes) {
         $routes->get('/', 'Tracteurs::list');
         $routes->post('/', 'Tracteurs::create');
@@ -112,9 +120,9 @@ $routes->group('super-admin', ['filter' => 'superAdmin'], function ($routes) {
         $routes->post('class', 'Rapports::genClass');
     });
 
-    $routes->get('archives','Archives::index');
-    $routes->post('archives','Archives::generate');
-    $routes->get('suivi-flotte','Suivi::index');
+    $routes->get('archives', 'Archives::index');
+    $routes->post('archives', 'Archives::generate');
+    $routes->get('suivi-flotte', 'Suivi::index');
 });
 
 //admin
@@ -187,8 +195,7 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
         $routes->post('modifier', 'Exports::save');
     });
 
-    $routes->get('suivi-flotte','Suivi::index');
-
+    $routes->get('suivi-flotte', 'Suivi::index');
 });
 
 //OPS
@@ -221,8 +228,8 @@ $routes->group('ops', ['filter' => 'ops'], function ($routes) {
         $routes->post('modifier', 'Exports::save');
     });
 
-    $routes->get('archives','Archives::index');
-    $routes->post('archives','Archives::generate');
+    $routes->get('archives', 'Archives::index');
+    $routes->post('archives', 'Archives::generate');
 });
 
 //facturation
