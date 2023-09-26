@@ -7,6 +7,9 @@ use App\Models\Transporteurs as ModelsTransporteurs;
 
 class Transporteurs extends BaseController
 {
+    public function __construct(){
+        session()->p = "transporteurs";
+    }
     public function list()
     {
         return view('utils/transporteurs/list', [
