@@ -24,6 +24,7 @@ Livraisons rapport
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
@@ -47,6 +48,11 @@ Livraisons rapport
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['type'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['transporteur'] ?>
                       </div>
                     </td>
                     <td>

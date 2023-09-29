@@ -65,6 +65,7 @@ Archives
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
@@ -88,6 +89,11 @@ Archives
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $e['date_posit'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $e['transporteur'] ?>
                       </div>
                     </td>
                     <td>
@@ -206,6 +212,7 @@ Archives
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
@@ -227,6 +234,11 @@ Archives
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $t['type_transfert'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $e['transporteur'] ?>
                       </div>
                     </td>
                     <td>
@@ -330,6 +342,7 @@ Archives
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de BL</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de validité</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de livraison</th>
@@ -356,6 +369,11 @@ Archives
                       <?= $l['type'] ?>
                     </div>
                   </td>
+                  <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $e['transporteur'] ?>
+                      </div>
+                    </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['date_depot_bl'] ?>
