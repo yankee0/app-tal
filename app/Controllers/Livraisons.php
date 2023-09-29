@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\Chauffeurs;
 use App\Models\Livraisons as ModelsLivraisons;
 use App\Models\Tracteurs;
+use App\Models\Transporteurs;
 
 class Livraisons extends BaseController
 {
@@ -24,7 +25,8 @@ class Livraisons extends BaseController
                 ->findAll(),
             'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
             'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
-            'dl' => (new ModelsLivraisons())->where('MONTH(date_livraison)',date('m'))->find()
+            'dl' => (new ModelsLivraisons())->where('MONTH(date_livraison)',date('m'))->find(),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
 
         return view('utils/livraisons/dashboard', $data);
@@ -68,7 +70,8 @@ class Livraisons extends BaseController
         $data = [
             'l' => (new ModelsLivraisons())->find($id),
             'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll()
+            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
 
         return view('utils/livraisons/modifier', $data);

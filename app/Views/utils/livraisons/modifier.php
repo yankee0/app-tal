@@ -19,12 +19,21 @@ Livraisons
         <div class="card-body">
           <h5 class="card-title">Modifier livraison</h5>
           <div class="row">
-          <div class="mb-3">
+            <div class="mb-3 col-md-6">
               <label for="type" class="form-label">Type de livraisons</label>
               <select class="form-select" name="type" id="type">
-                <option selected hidden>Sélectionner</option>
+                <!-- <option selected hidden>Sélectionner</option> -->
                 <option <?= $l['type'] == 'TOM' ? 'selected' : '' ?> value="TOM">TOM</option>
                 <option <?= $l['type'] == 'TIERS' ? 'selected' : '' ?> value="TIERS">TIERS</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="transporteur" class="form-label">Transporteur</label>
+              <select class="form-select" name="transporteur" id="transporteur">
+                <option selected value="TAL">TAL</option>
+                <?php foreach ($transporteur as $item) : ?>
+                  <option <?= $l['transporteur'] == $item['nom'] ? 'selected' : '' ?> value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                <?php endforeach ?>
               </select>
             </div>
             <div class="mb-3 col-md-4">
