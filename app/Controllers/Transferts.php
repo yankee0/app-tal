@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use App\Models\Chauffeurs;
 use App\Models\Tracteurs;
+use App\Models\Chauffeurs;
+use App\Models\Transporteurs;
+use App\Controllers\BaseController;
 use App\Models\Transferts as ModelsTransferts;
 
 class Transferts extends BaseController
@@ -20,7 +21,9 @@ class Transferts extends BaseController
                 ->orWhere('type', '')
                 ->orWhere('type', null)
                 ->findAll(),
-            'dt' => (new ModelsTransferts())->where('MONTH(date_mvt)', date('m'))->find()
+            'dt' => (new ModelsTransferts())->where('MONTH(date_mvt)', date('m'))->find(),
+            'transporteur' => (new Transporteurs())->findAll(),
+
         ];
         return view('utils/transferts/dashboard', $data);
     }
@@ -80,7 +83,8 @@ class Transferts extends BaseController
         $data = [
             't' => (new ModelsTransferts())->find($id),
             'chauf' => (new Chauffeurs())->orderBy('nom', 'ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll()
+            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll(),
+            'transporteur' => (new Transporteurs())->findAll(),
         ];
 
         return view('utils/transferts/modifier', $data);

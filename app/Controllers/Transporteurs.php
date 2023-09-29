@@ -13,7 +13,7 @@ class Transporteurs extends BaseController
     public function list()
     {
         return view('utils/transporteurs/list', [
-            'ts' => (new ModelsTransporteurs())->findAll()
+            'ts' => (new ModelsTransporteurs())->findAll(),
         ]);
     }
 

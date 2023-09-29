@@ -38,6 +38,15 @@ Tranferts
                 <option <?= ($t['type'] == "WALL") ? 'selected' : '' ?> value="WALL">WALL</option>
               </select>
             </div>
+            <div class="mb-3 col-md-6">
+              <label for="transporteur" class="form-label">Transporteur</label>
+              <select class="form-select" name="transporteur" id="transporteur">
+                <option selected value="TAL">TAL</option>
+                <?php foreach ($transporteur as $item) : ?>
+                  <option <?= $t['transporteur'] == $item['nom'] ? 'selected' : '' ?> value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_mvt" class="form-label">Date MVT</label>
               <input value="<?= set_value('date_mvt', $t['date_mvt']) ?>" type="datetime-local" class="form-control" name="date_mvt" id="date_mvt" aria-describedby="helpId" placeholder="">
@@ -127,7 +136,7 @@ Tranferts
     });
   </script>
 
-<script>
+  <script>
     $(document).ready(function() {
       $('#type_transfert').change(function(e) {
         e.preventDefault();

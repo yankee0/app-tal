@@ -29,6 +29,7 @@ class Transferts extends Model
         "eirs",
         "remarque_sous_traitant",
         "tracteur",
+        "transporteur",
     ];
 
     // Dates

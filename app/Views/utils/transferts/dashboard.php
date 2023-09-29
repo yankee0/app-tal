@@ -36,6 +36,15 @@ Tranferts
                 <option value="WALL">WALL</option>
               </select>
             </div>
+            <div class="mb-3 col-md-6">
+              <label for="transporteur" class="form-label">Transporteur</label>
+              <select class="form-select" name="transporteur" id="transporteur">
+                <option selected value="TAL">TAL</option>
+                <?php foreach ($transporteur as $item) : ?>
+                  <option value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_mvt" class="form-label">Date MVT</label>
               <input type="datetime-local" class="form-control" name="date_mvt" id="date_mvt" aria-describedby="helpId" placeholder="">
@@ -125,6 +134,7 @@ Tranferts
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type conteneur</th>
@@ -150,6 +160,11 @@ Tranferts
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $t['type'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $t['transporteur'] ?>
                       </div>
                     </td>
                     <td>
@@ -240,6 +255,7 @@ Tranferts
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type de transfert</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date MVT</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type conteneur</th>
@@ -265,6 +281,11 @@ Tranferts
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $t['type'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $t['transporteur'] ?>
                     </div>
                   </td>
                   <td>

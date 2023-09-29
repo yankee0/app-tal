@@ -30,7 +30,7 @@ Livraisons
             <div class="mb-3 col-md-6">
               <label for="transporteur" class="form-label">Transporteur</label>
               <select class="form-select" name="transporteur" id="transporteur">
-                <option selected hidden>Sélectionner</option>
+                <option selected value="TAL">TAL</option>
                 <?php foreach ($transporteur as $item) : ?>
                   <option value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
                 <?php endforeach ?>
@@ -262,7 +262,7 @@ Livraisons
                     </td>
                   </tr>
                 <?php endforeach ?>
-  
+
               </tbody>
             </table>
           </div>
@@ -403,7 +403,7 @@ Livraisons
                     </td>
                   </tr>
                 <?php endforeach ?>
-  
+
               </tbody>
             </table>
           </div>
