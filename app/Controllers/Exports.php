@@ -6,6 +6,7 @@ use App\Models\Tracteurs;
 use App\Models\Chauffeurs;
 use App\Controllers\BaseController;
 use App\Models\Exports as ModelsExports;
+use App\Models\Transporteurs;
 
 class Exports extends BaseController
 {
@@ -21,7 +22,8 @@ class Exports extends BaseController
                 ->findAll(),
             'chauf' => (new Chauffeurs())->orderBy('nom', 'ASC')->findAll(),
             'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll(),
-            'de' => (new ModelsExports())->where('MONTH(date_posit)',date('m'))->find()
+            'de' => (new ModelsExports())->where('MONTH(date_posit)', date('m'))->find(),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
 
         return view('utils/exports/dashboard', $data);
@@ -65,7 +67,8 @@ class Exports extends BaseController
         $data = [
             'e' => (new ModelsExports())->find($id),
             'chauf' => (new Chauffeurs())->orderBy('nom', 'ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll()
+            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll(),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
 
         return view('utils/exports/modifier', $data);

@@ -19,13 +19,22 @@ Exports
         <div class="card-body">
           <h5 class="card-title">Modifier un export</h5>
           <div class="row">
-          <div class="mb-3 col-md-12">
+            <div class="mb-3 col-md-6">
               <label for="type_operation" class="form-label">Type d'opération</label>
               <select class="form-select" name="type_operation" id="type_operation" required>
                 <option value="" hidden selected>Sélectionner</option>
                 <option hidden>Sélectionnez le type</option>
                 <option <?= ($e['type_operation'] == 'TOM') ? 'selected' : '' ?> value="TOM">TOM</option>
                 <option <?= ($e['type_operation'] == 'TIER') ? 'selected' : '' ?> value="TIER">TIER</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="transporteur" class="form-label">Transporteur</label>
+              <select class="form-select" name="transporteur" id="transporteur">
+                <option selected value="TAL">TAL</option>
+                <?php foreach ($transporteur as $item) : ?>
+                  <option <?= $e['transporteur'] == $item['nom'] ?> value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                <?php endforeach ?>
               </select>
             </div>
             <div class="mb-3 col-md-4">
@@ -128,7 +137,7 @@ Exports
               </select>
             </div>
             <div class="col-md- 12 text-center">
-              <button type="submit" name="id" value="<?= $e['id'] ?>"  class="btn btn-primary">Enregister</button>
+              <button type="submit" name="id" value="<?= $e['id'] ?>" class="btn btn-primary">Enregister</button>
             </div>
 
           </div>
