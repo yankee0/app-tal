@@ -20,7 +20,7 @@ Remorques
           <div class="row">
             <div class="col-md-12">
               <div class="mb-3">
-                <select class="form-select" name="type" required>
+                <select class="form-select" name="societe" required>
                   <option hidden selected value="">Sélectionner la Société</option>
                   <option selected value="TAL">TAL</option>
                   <?php foreach ($transporteur as $item) : ?>
