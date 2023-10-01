@@ -25,6 +25,7 @@ class Tracteurs extends Model
         'fin_vt',
         'fin_as',
         'fin_cats',
+        'societe',
     ];
 
     // Dates

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Remorques;
 use App\Models\Tracteurs as ModelsTracteurs;
+use App\Models\Transporteurs;
 
 class Tracteurs extends BaseController
 {
@@ -13,7 +14,8 @@ class Tracteurs extends BaseController
         session()->p = 'tracteurs';
         $data = [
             'ts' => (new ModelsTracteurs())->findAll(),
-            'rs' => (new Remorques())->findAll()
+            'rs' => (new Remorques())->findAll(),
+            'ss' => (new Transporteurs())->findAll()
         ];
         return view('utils/tracteurs/liste', $data);
     }
@@ -76,6 +78,8 @@ class Tracteurs extends BaseController
     {
         $data = [
             't' => (new ModelsTracteurs())->find($id),
+            'ss' => (new Transporteurs())->findAll()
+
         ];
         return view('utils/tracteurs/modifier', $data);
     }
