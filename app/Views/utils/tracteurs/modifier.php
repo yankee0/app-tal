@@ -20,6 +20,16 @@ Tracteurs
           <div class="row">
             <div class="col-md-4">
               <div class="mb-3">
+                <select class="form-select " name="societe" id="societe">
+                  <option value="TAL">TAL</option>
+                  <?php foreach ($ss as $s) : ?>
+                    <option <?= $s['nom'] == $t['societe'] ? 'selected' : '' ?> value="<?= $s['nom'] ?>"><?= $s['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
                 <input type="text" value="<?= set_value('chrono', $t['chrono']) ?>" class="form-control" name="chrono" aria-describedby="helpId" placeholder="Chrono" required>
               </div>
             </div>

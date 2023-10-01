@@ -20,6 +20,17 @@ Tracteurs
           <div class="row">
             <div class="col-md-4">
               <div class="mb-3">
+                <select class="form-select " name="societe" id="societe">
+                  <option selected>Sélectionnez la société</option>
+                  <option value="TAL">TAL</option>
+                  <?php foreach ($ss as $s) : ?>
+                    <option value="<?= $s['nom'] ?>"><?= $s['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
                 <input type="text" class="form-control" name="chrono" aria-describedby="helpId" placeholder="Chrono" required>
               </div>
             </div>
@@ -96,6 +107,7 @@ Tracteurs
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Societe</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Marque</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Modèle</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
@@ -120,6 +132,9 @@ Tracteurs
                           <h5 class="mb-0 text-sm text-secondary"><?= $t['immatriculation'] ?></h5>
                         </div>
                       </div>
+                    </td>
+                    <td>
+                      <p class="text-sm font-weight-bold mb-0"><?= $t['societe'] ?></p>
                     </td>
                     <td>
                       <p class="text-sm font-weight-bold mb-0"><?= $t['marque'] ?></p>
