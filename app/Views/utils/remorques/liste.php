@@ -18,6 +18,17 @@ Remorques
         <div class="card-body">
           <h5 class="card-title">Ajouter un remorque</h5>
           <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <select class="form-select" name="type" required>
+                  <option hidden selected value="">Sélectionner la Société</option>
+                  <option selected value="TAL">TAL</option>
+                  <?php foreach ($transporteur as $item) : ?>
+                    <option value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
             <div class="col-md-3">
               <div class="mb-3">
                 <input type="text" class="form-control" name="chrono" aria-describedby="helpId" placeholder="Chrono" required>
@@ -96,6 +107,7 @@ Remorques
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorques</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Société</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Immatriculation</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Chassis</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
@@ -119,6 +131,9 @@ Remorques
                           <h5 class="mb-0 text-sm text-secondary"><?= $r['immatriculation'] ?></h5>
                         </div>
                       </div>
+                    </td>
+                    <td>
+                      <span class="text-xs font-weight-bold"><?= $r['societe'] ?></span>
                     </td>
                     <td>
                       <span class="text-xs font-weight-bold"><?= $r['immatriculation'] ?></span>

@@ -19,22 +19,32 @@ Chauffeurs
         <div class="card-body">
           <h5 class="card-title">Modifier info chauffeur</h5>
           <div class="row">
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
-                <input type="text" value="<?= set_value('nom',$c['nom']) ?>" class="form-control" name="nom" aria-describedby="helpId" placeholder="Nom complet" required>
+                <select class="form-select " name="societe" id="societe">
+                  <option value="TAL">TAL</option>
+                  <?php foreach ($ss as $s) : ?>
+                    <option <?= $s['nom'] == $c['societe'] ? 'selected' : '' ?> value="<?= $s['nom'] ?>"><?= $s['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
-                <input type="text" value="<?= set_value('matricule',$c['matricule']) ?>" class="form-control" name="matricule" aria-describedby="helpId" placeholder="Matricule" required>
+                <input type="text" value="<?= set_value('nom', $c['nom']) ?>" class="form-control" name="nom" aria-describedby="helpId" placeholder="Nom complet" required>
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
-                <input type="tel" value="<?= set_value('tel',$c['tel']) ?>" class="form-control" name="tel" aria-describedby="helpId" placeholder="Téléphone">
+                <input type="text" value="<?= set_value('matricule', $c['matricule']) ?>" class="form-control" name="matricule" aria-describedby="helpId" placeholder="Matricule" required>
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
+              <div class="mb-3">
+                <input type="tel" value="<?= set_value('tel', $c['tel']) ?>" class="form-control" name="tel" aria-describedby="helpId" placeholder="Téléphone">
+              </div>
+            </div>
+            <div class="col-md-4">
               <div class="mb-3">
                 <button type="submit" name="id" value="<?= $c['id'] ?>" class="btn btn-primary">Modifier info chauffeur</button>
               </div>

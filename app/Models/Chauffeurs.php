@@ -17,6 +17,7 @@ class Chauffeurs extends Model
         'matricule',
         'nom',
         'tel',
+        'societe',
     ];
 
     // Dates

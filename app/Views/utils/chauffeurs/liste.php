@@ -19,22 +19,33 @@ Chauffeurs
         <div class="card-body">
           <h5 class="card-title">Ajouter un chauffeur</h5>
           <div class="row">
-            <div class="col-md">
+            <div class="col-md-4">
+              <div class="mb-3">
+                <select class="form-select " name="societe" id="societe">
+                  <option selected>Sélectionnez la société</option>
+                  <option value="TAL">TAL</option>
+                  <?php foreach ($ss as $s) : ?>
+                    <option value="<?= $s['nom'] ?>"><?= $s['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="nom" aria-describedby="helpId" placeholder="Nom complet" required>
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="text" class="form-control" name="matricule" aria-describedby="helpId" placeholder="Matricule" required>
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
                 <input type="tel" class="form-control" name="tel" aria-describedby="helpId" placeholder="Téléphone">
               </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-4">
               <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Ajouter le chauffeur</button>
               </div>
@@ -59,6 +70,7 @@ Chauffeurs
               <thead>
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">chauffeurs</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Société</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matricule</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Téléphone</th>
                   <th class="text-secondary opacity-7"></th>
@@ -75,6 +87,11 @@ Chauffeurs
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm"><?= $c['nom'] ?></h6>
                         </div>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $c['societe'] ?>
                       </div>
                     </td>
                     <td class="">

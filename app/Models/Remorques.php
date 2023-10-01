@@ -24,7 +24,8 @@ class Remorques extends Model
         'fin_vt',
         'fin_as',
         'fin_cats',
-        'type'
+        'type',
+        'societe',
     ];
 
     // Dates

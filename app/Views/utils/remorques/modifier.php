@@ -18,6 +18,17 @@ Remorques
         <div class="card-body">
           <h5 class="card-title">Modifier le remorque <?= $r['chrono'] ?></h5>
           <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <select class="form-select" name="type" required>
+                  <option hidden selected value="">Sélectionner la Société</option>
+                  <option selected value="TAL">TAL</option>
+                  <?php foreach ($transporteur as $item) : ?>
+                    <option <?= $r['societe'] == $item['nom'] ? 'selected' : ''  ?> value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
             <div class="col-md-3">
               <div class="mb-3">
                 <input type="text" value="<?= set_value('chrono', $r['chrono']) ?>" class="form-control" name="chrono" aria-describedby="helpId" placeholder="Chrono" required>

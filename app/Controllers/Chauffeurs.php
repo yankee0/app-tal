@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Chauffeurs as ModelsChauffeurs;
+use App\Models\Transporteurs;
 
 class Chauffeurs extends BaseController
 {
@@ -12,6 +13,7 @@ class Chauffeurs extends BaseController
         session()->p = 'chauffeurs';
         $data = [
             'cs' => (new ModelsChauffeurs())->findAll(),
+            'ss' => (new Transporteurs())->findAll(),
         ];
 
         return view('utils/chauffeurs/liste', $data);
@@ -79,7 +81,8 @@ class Chauffeurs extends BaseController
     public function edit($id)
     {
         $data = [
-            'c' => (new ModelsChauffeurs())->find($id)
+            'c' => (new ModelsChauffeurs())->find($id),
+            'ss' => (new Transporteurs())->findAll(),
         ];
 
         return view('utils/chauffeurs/modifier', $data);

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Remorques as ModelsRemorques;
+use App\Models\Transporteurs;
 
 class Remorques extends BaseController
 {
@@ -12,6 +13,7 @@ class Remorques extends BaseController
         session()->p = 'remorques';
         $data = [
             'rs' => (new ModelsRemorques())->findAll(),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
         return view('utils/remorques/liste', $data);
     }
@@ -74,6 +76,7 @@ class Remorques extends BaseController
     {
         $data = [
             'r' => (new ModelsRemorques())->find($id),
+            'transporteur' => (new Transporteurs())->findAll()
         ];
         return view('utils/remorques/modifier', $data);
     }
@@ -83,12 +86,12 @@ class Remorques extends BaseController
         $data = $this->request->getPost();
         if ((new ModelsRemorques())->save($data)) {
             return redirect()
-                ->to(session()->root.'/remorques')
+                ->to(session()->root . '/remorques')
                 ->with('notif', true)
                 ->with('message', 'Remorque Modifier.');
         } else {
             return redirect()
-                ->to(session()->root.'/remorques')
+                ->to(session()->root . '/remorques')
                 ->with('notif', false)
                 ->with('message', 'Echec de la modification.');
         }
