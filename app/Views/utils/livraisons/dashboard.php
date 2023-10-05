@@ -27,7 +27,7 @@ Livraisons
                 <option value="TIERS">TIERS</option>
               </select>
             </div>
-            <div class="mb-3 col-md-6">
+            <!-- <div class="mb-3 col-md-6">
               <label for="transporteur" class="form-label">Transporteur</label>
               <select class="form-select" name="transporteur" id="transporteur">
                 <option selected value="TAL">TAL</option>
@@ -35,7 +35,7 @@ Livraisons
                   <option value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
                 <?php endforeach ?>
               </select>
-            </div>
+            </div> -->
             <div class="mb-3 col-md-4">
               <label for="date_depot_bl" class="form-label">Date de BL</label>
               <input type="date" class="form-control" name="date_depot_bl" id="date_depot_bl" aria-describedby="helpId" required>
@@ -79,7 +79,7 @@ Livraisons
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -108,7 +108,7 @@ Livraisons
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -411,5 +411,12 @@ Livraisons
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function() {
+      $('#transporteur').change(function (e) { 
+        
+      });
+    });
+  </script>
 
   <?= $this->endSection(); ?>

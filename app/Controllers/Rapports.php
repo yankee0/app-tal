@@ -57,8 +57,8 @@ class Rapports extends BaseController
         }
 
         for ($i = 0; $i < sizeof($livraisons); $i++) {
-            $ca = (new Chauffeurs())->where('matricule', $livraisons[$i]['chauffeur_aller'])->first();
-            $cr = (new Chauffeurs())->where('matricule', $livraisons[$i]['chauffeur_retour'])->first();
+            $ca = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $livraisons[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $livraisons[$i]['chauffeur_retour'])->first();
 
             if (!empty($ca)) {
                 $livraisons[$i]['chauffeur_aller'] = $ca['nom'];
@@ -94,7 +94,7 @@ class Rapports extends BaseController
         }
         for ($i = 0; $i < sizeof($transferts); $i++) {
             try {
-                $c = (new Chauffeurs())->where('matricule', $transferts[$i]['chauffeur'])->first();
+                $c = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $transferts[$i]['chauffeur'])->first();
                 $transferts[$i]['chauffeur'] .= ' - ' . $c['nom'];
             } catch (\Throwable $th) {
                 continue;
@@ -102,7 +102,7 @@ class Rapports extends BaseController
         }
         // dd($transferts);
         for ($i = 0; $i < sizeof($transferts); $i++) {
-            $ca = (new Chauffeurs())->where('matricule', $transferts[$i]['chauffeur'])->first();
+            $ca = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $transferts[$i]['chauffeur'])->first();
 
             if (!empty($ca)) {
                 $transferts[$i]['chauffeur'] = $ca['nom'];
@@ -133,8 +133,8 @@ class Rapports extends BaseController
             $filename = "RAPPORT_EXPORTS_MENSUEL_" . $m . "_" . $y;
         }
         for ($i = 0; $i < sizeof($exports); $i++) {
-            $ca = (new Chauffeurs())->where('matricule', $exports[$i]['chauffeur_aller'])->first();
-            $cr = (new Chauffeurs())->where('matricule', $exports[$i]['chauffeur_retour'])->first();
+            $ca = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $exports[$i]['chauffeur_aller'])->first();
+            $cr = (new Chauffeurs())->where('societe', 'TAL')->where('matricule', $exports[$i]['chauffeur_retour'])->first();
 
             if (!empty($ca)) {
                 $exports[$i]['chauffeur_aller'] = $ca['nom'];
@@ -267,7 +267,7 @@ class Rapports extends BaseController
 
         switch ($type) {
             case 'chauffeur':
-                $data = (new SuperAdmin)->tcm($m, $y,false);
+                $data = (new SuperAdmin)->tcm($m, $y, false);
                 return view('utils/rapports/tmc', [
                     'cs' => $data,
                     'filename' => 'CLASSEMENT_CHAUFFEUR_TEUS_TRANSFERT_MENSUEL_' . $m . '_' . $y
@@ -276,7 +276,7 @@ class Rapports extends BaseController
                 break;
 
             default:
-                $data = (new SuperAdmin)->mcm($m, $y,false);
+                $data = (new SuperAdmin)->mcm($m, $y, false);
                 // dd($data);
                 return view('utils/rapports/mcm', [
                     'ts' => $data,

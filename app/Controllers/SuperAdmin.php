@@ -22,7 +22,7 @@ class SuperAdmin extends BaseController
             'l' => (new Livraisons())->where('MONTH(date_livraison)',date('m',time()))->where('YEAR(date_livraison)',date('Y',time()))->countAllResults(),
             't' => (new Transferts())->select('SUM(teus) as teus')->where('MONTH(date_mvt)',date('m',time()))->where('YEAR(date_mvt)',date('Y',time()))->first(),
             'e' => (new Exports())->where('MONTH(date_posit)',date('m',time()))->where('YEAR(date_posit)',date('Y',time()))->countAllResults(),
-            'c' => (new Tracteurs())->countAll(),
+            'c' => (new Tracteurs())->where('societe','TAL')->countAllResults(),
             'tcm' => $this->tcm(),
             'mcm' => $this->mcm()
         ]);
@@ -31,7 +31,7 @@ class SuperAdmin extends BaseController
     // mvt camion mensu
     public function mcm($m = null , $y = null, $stop = true)
     {
-        $cs = (new Tracteurs())->findAll();
+        $cs = (new Tracteurs())->where('societe','TAL')->find();
         $ts = (new Transferts())
             ->where('MONTH(date_mvt)', (empty($m)) ? date('m') : $m)
             ->where('YEAR(date_mvt)', (empty($y)) ? date('Y') : $y)
@@ -107,7 +107,7 @@ class SuperAdmin extends BaseController
     public function tcm($m = null , $y = null,$stop = true)
     {
 
-        $cs = (new Chauffeurs())->findAll();
+        $cs = (new Chauffeurs())->where('societe','TAL')->find();
         $ts = (new Transferts())
         ->where('MONTH(date_mvt)',(empty($m)) ? date('m') : $m)
         ->where('YEAR(date_mvt)',(empty($y)) ? date('Y') : $y)
