@@ -79,7 +79,7 @@ Livraisons
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -108,7 +108,7 @@ Livraisons
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option class="<?= $c['societe'] ?>" value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -413,8 +413,8 @@ Livraisons
   </div>
   <script>
     $(document).ready(function() {
-      $('#transporteur').change(function (e) { 
-        
+      $('#transporteur').change(function(e) {
+
       });
     });
   </script>

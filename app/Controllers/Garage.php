@@ -16,8 +16,8 @@ class Garage extends BaseController
             'trs' => (new Tracteurs())->findAll(),
             'rms' => (new Remorques())->findAll(),
             'gs' => (new ModelsGarage())
-                // ->where('MONTH(date)', date('m'))
-                // ->where('YEAR(date)', date('Y'))
+                ->where('MONTH(date)', date('m'))
+                ->where('YEAR(date)', date('Y'))
                 ->orderBy('date', 'DESC')
                 ->findAll(),
         ];
