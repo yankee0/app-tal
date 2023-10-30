@@ -21,12 +21,22 @@ Chauffeurs
           <div class="row">
             <div class="col-md-4">
               <div class="mb-3">
-                <select class="form-select " name="societe" id="societe">
-                  <option selected>Sélectionnez la société</option>
+                <select required class="form-select " name="societe" id="societe">
+                  <option hidden value="" selected>Sélectionnez la société</option>
                   <option value="TAL">TAL</option>
                   <?php foreach ($ss as $s) : ?>
                     <option value="<?= $s['nom'] ?>"><?= $s['nom'] ?></option>
                   <?php endforeach ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
+                <select required class="form-select " name="statut" id="societe">
+                  <option hidden value="" selected>Statut</option>
+                  <option value="EMBAUCHÉ">EMBAUCHÉ</option>
+                  <option value="STAGIAIRE">STAGIAIRE</option>
+                  <option value="PRESTATAIRE">PRESTATAIRE</option>
                 </select>
               </div>
             </div>
@@ -71,6 +81,7 @@ Chauffeurs
                 <tr>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">chauffeurs</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Société</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Statut</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Matricule</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Téléphone</th>
                   <th class="text-secondary opacity-7"></th>
@@ -97,6 +108,11 @@ Chauffeurs
                     <td class="">
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $c['matricule'] ?>
+                      </div>
+                    </td>
+                    <td class="">
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $c['statut'] ?>
                       </div>
                     </td>
                     <td class="">

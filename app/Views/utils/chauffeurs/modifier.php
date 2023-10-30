@@ -31,6 +31,16 @@ Chauffeurs
             </div>
             <div class="col-md-4">
               <div class="mb-3">
+                <select required class="form-select " name="statut" id="societe">
+                  <!-- <option hidden value="" selected>Statut</option> -->
+                  <option <?= $c['statut'] == 'EMBAUCHÉ' ? 'selected' : '' ?> value="EMBAUCHÉ">EMBAUCHÉ</option>
+                  <option <?= $c['statut'] == 'STAGIAIRE' ? 'selected' : '' ?> value="STAGIAIRE">STAGIAIRE</option>
+                  <option <?= $c['statut'] == 'PRESTATAIRE' ? 'selected' : '' ?> value="PRESTATAIRE">PRESTATAIRE</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
                 <input type="text" value="<?= set_value('nom', $c['nom']) ?>" class="form-control" name="nom" aria-describedby="helpId" placeholder="Nom complet" required>
               </div>
             </div>

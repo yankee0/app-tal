@@ -18,6 +18,7 @@ class Chauffeurs extends Model
         'nom',
         'tel',
         'societe',
+        'statut',
     ];
 
     // Dates

@@ -11,6 +11,7 @@ class Suivi extends BaseController
 {
     public function index()
     {
+        session()->p = 'suivi-flotte';
         $data = [
             'tracs' => (new Tracteurs())->countAll(),
             'rems' => (new Remorques())->countAll(),
@@ -34,6 +35,6 @@ class Suivi extends BaseController
                 ->find(),
         ];
 
-        return view('utils/suivi/index.php',$data);
+        return view('utils/suivi/index.php', $data);
     }
 }
