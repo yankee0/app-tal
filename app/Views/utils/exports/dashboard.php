@@ -109,7 +109,7 @@ Exports
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -118,9 +118,13 @@ Exports
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="retour_rem" class="form-label">Retour Remorque</label>
+              <input type="date" class="form-control" name="retour_rem" id="retour_rem" aria-describedby="helpId">
             </div>
             <div class="col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Enregistrer</button>
@@ -170,6 +174,7 @@ Exports
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
                 <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
@@ -261,6 +266,11 @@ Exports
                       <?= $e['chauffeur_retour'] ?>
                     </div>
                   </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['retour_rem'] ?>
+                    </div>
+                  </td>
                   <td class="align-middle">
                     <div class="d-flex align-items-center gap-3">
                       <span>
@@ -319,6 +329,7 @@ Exports
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
                 <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
@@ -408,6 +419,11 @@ Exports
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['chauffeur_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['retour_rem'] ?>
                     </div>
                   </td>
                   <td class="align-middle">

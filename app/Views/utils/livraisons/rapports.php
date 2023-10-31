@@ -40,6 +40,7 @@ Livraisons rapport
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour Remorque</th>
                 </tr>
               </thead>
               <tbody>
@@ -123,6 +124,11 @@ Livraisons rapport
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['chauffeur_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['retour_rem'] ?>
                       </div>
                     </td>
                     <td>

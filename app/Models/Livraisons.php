@@ -29,7 +29,8 @@ class Livraisons extends Model
         'chauffeur_retour',
         'mvt_retour',
         'type',
-        'transporteur'
+        'transporteur',
+        'retour_rem'
     ];
 
     // Dates

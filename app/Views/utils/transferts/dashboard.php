@@ -90,7 +90,7 @@ Tranferts
               <select class="form-select tal" required name="chauffeur" id="chauffeur_aller">
                 <option selected hidden value="">Chauffeur TAL</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' .$c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>

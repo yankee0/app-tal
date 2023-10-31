@@ -27,7 +27,7 @@ Livraisons
                 <option value="TIERS">TIERS</option>
               </select>
             </div>
-            <!-- <div class="mb-3 col-md-6">
+            <div class="mb-3 col-md-6">
               <label for="transporteur" class="form-label">Transporteur</label>
               <select class="form-select" name="transporteur" id="transporteur">
                 <option selected value="TAL">TAL</option>
@@ -35,7 +35,7 @@ Livraisons
                   <option value="<?= $item['nom'] ?>"><?= $item['nom'] ?></option>
                 <?php endforeach ?>
               </select>
-            </div> -->
+            </div>
             <div class="mb-3 col-md-4">
               <label for="date_depot_bl" class="form-label">Date de BL</label>
               <input type="date" class="form-control" name="date_depot_bl" id="date_depot_bl" aria-describedby="helpId" required>
@@ -116,6 +116,10 @@ Livraisons
               <label for="mvt_retour" class="form-label">MVT retour</label>
               <input type="text" class="form-control" name="mvt_retour" id="mvt_retour" aria-describedby="helpId">
             </div>
+            <div class="mb-3 col-md-4">
+              <label for="retour_rem" class="form-label">Retour Remorque</label>
+              <input type="date" class="form-control" name="retour_rem" id="retour_rem" aria-describedby="helpId">
+            </div>
             <div class="col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Enregistrer</button>
             </div>
@@ -155,6 +159,7 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
@@ -246,6 +251,11 @@ Livraisons
                         <?= $l['mvt_retour'] ?>
                       </div>
                     </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['retour_rem'] ?>
+                      </div>
+                    </td>
                     <td class="align-middle">
                       <div class="d-flex align-items-center gap-3">
                         <span>
@@ -262,7 +272,6 @@ Livraisons
                     </td>
                   </tr>
                 <?php endforeach ?>
-
               </tbody>
             </table>
           </div>
@@ -296,6 +305,7 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
@@ -385,6 +395,11 @@ Livraisons
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['mvt_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['retour_rem'] ?>
                       </div>
                     </td>
                     <td class="align-middle">

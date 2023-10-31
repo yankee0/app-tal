@@ -92,7 +92,7 @@ Tranferts
               <select class="form-select tal" name="chauffeur" id="chauffeur_aller">
                 <option selected hidden value="">Chauffeur TAL</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($t['chauffeur'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($t['chauffeur'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' .$c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>

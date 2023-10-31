@@ -44,6 +44,7 @@ Exports
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Aller</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Retour</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour Remorque</th>
                 </tr>
               </thead>
               <tbody>
@@ -132,6 +133,11 @@ Exports
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $e['chauffeur_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $e['retour_rem'] ?>
                       </div>
                     </td>
                   </tr>

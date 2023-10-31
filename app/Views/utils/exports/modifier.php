@@ -122,7 +122,7 @@ Exports
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($e['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($e['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -132,9 +132,13 @@ Exports
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($e['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($e['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="retour_rem" class="form-label">Retour Remorque</label>
+              <input type="date" value="<?= $e['retour_rem'] ?>" class="form-control" name="retour_rem" id="retour_rem" aria-describedby="helpId">
             </div>
             <div class="col-md- 12 text-center">
               <button type="submit" name="id" value="<?= $e['id'] ?>" class="btn btn-primary">Enregister</button>
