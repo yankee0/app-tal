@@ -153,7 +153,7 @@ Exports
 
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="card mt-4">
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
@@ -170,7 +170,6 @@ Exports
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Op.</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
@@ -307,14 +306,13 @@ Exports
                   </td>
                 </tr>
               <?php endforeach; ?>
-
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="card mt-4">
         <div class="card-body">
           <div class="d-block d-md-flex justify-content-between">
