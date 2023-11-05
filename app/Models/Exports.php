@@ -31,7 +31,9 @@ class Exports extends Model
         'chauffeur_retour',
         'type_operation',
         'transporteur',
-        'retour_rem'
+        'retour_rem',
+        'rem_aller',
+        'rem_retour',
     ];
 
     // Dates

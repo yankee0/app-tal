@@ -137,6 +137,24 @@ Exports
               </select>
             </div>
             <div class="mb-3 col-md-4">
+              <label for="rem_aller" class="form-label">Remorque aller:</label>
+              <select class="form-select " name="rem_aller" id="rem_aller">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
+                  <option <?= ($e['rem_aller'] == $t['chrono']) ? 'selected' : '' ?> value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_retour" class="form-label">Remorque retour:</label>
+              <select class="form-select " name="rem_retour" id="rem_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
+                  <option <?= ($e['rem_retour'] == $t['chrono']) ? 'selected' : '' ?> value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
               <label for="retour_rem" class="form-label">Retour Remorque</label>
               <input type="date" value="<?= $e['retour_rem'] ?>" class="form-control" name="retour_rem" id="retour_rem" aria-describedby="helpId">
             </div>

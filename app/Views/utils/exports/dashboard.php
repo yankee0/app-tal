@@ -80,14 +80,6 @@ Exports
               </select>
             </div>
             <div class="mb-3 col-md-4">
-              <label for="remorque" class="form-label">Remorque</label>
-              <input type="text" class="form-control" name="remorque">
-            </div>
-            <div class="mb-3 col-md-4">
-              <label for="date_retour" class="form-label">Date Retour</label>
-              <input type="date" class="form-control" name="date_retour">
-            </div>
-            <div class="mb-3 col-md-4">
               <label for="camion_retour" class="form-label">Camion Retour</label>
               <select class="form-select " name="camion_retour" id="camion_retour">
                 <option value="" hidden selected>Sélectionner</option>
@@ -95,14 +87,6 @@ Exports
                   <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
                 <?php endforeach ?>
               </select>
-            </div>
-            <div class="mb-3 col-md-4">
-              <label for="mv_retour" class="form-label">Mouvement Retour</label>
-              <input type="text" class="form-control" name="mv_retour">
-            </div>
-            <div class="mb-3 col-md-4">
-              <label for="remarques" class="form-label">Remarques</label>
-              <textarea class="form-control" name="remarques"></textarea>
             </div>
             <div class="mb-3 col-md-4">
               <label for="chauffeur_aller" class="form-label">Chauffeur Aller</label>
@@ -121,6 +105,36 @@ Exports
                   <option value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_aller" class="form-label">Remorque Aller</label>
+              <select class="form-select " name="rem_aller" id="rem_aller">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $r) : ?>
+                  <option value="<?= $r['chrono'] ?>"><?= $r['immatriculation'] . ' / ' . $r['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_retour" class="form-label">Remorque retour</label>
+              <select class="form-select " name="rem_retour" id="rem_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $r) : ?>
+                  <option value="<?= $r['chrono'] ?>"><?= $r['immatriculation'] . ' / ' . $r['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="date_retour" class="form-label">Date Retour</label>
+              <input type="date" class="form-control" name="date_retour">
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="mv_retour" class="form-label">Mouvement Retour</label>
+              <input type="text" class="form-control" name="mv_retour">
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="remarques" class="form-label">Remarques</label>
+              <textarea class="form-control" name="remarques"></textarea>
             </div>
             <div class="mb-3 col-md-4">
               <label for="retour_rem" class="form-label">Retour Remorque</label>
@@ -159,22 +173,23 @@ Exports
 
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Op.</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lieu</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Positionnement</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Aller</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Retour</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour remorque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
@@ -189,11 +204,6 @@ Exports
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['transporteur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['date_posit'] ?>
                     </div>
                   </td>
                   <td>
@@ -213,47 +223,27 @@ Exports
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['lieu_posit'] ?>
+                    </div>
+                  </td>
+                  <div class="d-flex px-3 py-1 gap-2">
+                    <?= $e['type_posit'] ?>
+                  </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['date_posit'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['mv_aller'] ?>
                     </div>
                   </td>
                   <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['lieu_posit'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['type_posit'] ?>
-                    </div>
-                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['camion_aller'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['remorque'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['date_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['camion_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['mv_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['remarques'] ?>
                     </div>
                   </td>
                   <td>
@@ -263,12 +253,42 @@ Exports
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['rem_aller'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['date_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['mv_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['camion_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['chauffeur_retour'] ?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['rem_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['retour_rem'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['remarques'] ?>
                     </div>
                   </td>
                   <td class="align-middle">
@@ -311,25 +331,25 @@ Exports
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Op.</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Transporteur</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lieu</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type Positionnement</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Aller</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mv Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Camion Retour</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur Retour</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Retour</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date de retour remorque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarques</th>
                 <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
@@ -344,11 +364,6 @@ Exports
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['transporteur'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['date_posit'] ?>
                     </div>
                   </td>
                   <td>
@@ -368,47 +383,27 @@ Exports
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['lieu_posit'] ?>
+                    </div>
+                  </td>
+                  <div class="d-flex px-3 py-1 gap-2">
+                    <?= $e['type_posit'] ?>
+                  </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['date_posit'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['mv_aller'] ?>
                     </div>
                   </td>
                   <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['lieu_posit'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['type_posit'] ?>
-                    </div>
-                  </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['camion_aller'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['remorque'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['date_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['camion_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['mv_retour'] ?>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['remarques'] ?>
                     </div>
                   </td>
                   <td>
@@ -418,12 +413,42 @@ Exports
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['rem_aller'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['date_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['mv_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['camion_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['chauffeur_retour'] ?>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['rem_retour'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
                       <?= $e['retour_rem'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $e['remarques'] ?>
                     </div>
                   </td>
                   <td class="align-middle">
@@ -442,9 +467,6 @@ Exports
                   </td>
                 </tr>
               <?php endforeach; ?>
-
-
-
             </tbody>
           </table>
         </div>

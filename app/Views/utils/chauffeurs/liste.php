@@ -107,12 +107,12 @@ Chauffeurs
                     </td>
                     <td class="">
                       <div class="d-flex px-3 py-1 gap-2">
-                        <?= $c['matricule'] ?>
+                        <?= $c['statut'] ?>
                       </div>
                     </td>
                     <td class="">
                       <div class="d-flex px-3 py-1 gap-2">
-                        <?= $c['statut'] ?>
+                        <?= $c['matricule'] ?>
                       </div>
                     </td>
                     <td class="">
