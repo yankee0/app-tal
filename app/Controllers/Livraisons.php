@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Chauffeurs;
 use App\Models\Livraisons as ModelsLivraisons;
+use App\Models\Remorques;
 use App\Models\Tracteurs;
 use App\Models\Transporteurs;
 
@@ -23,9 +24,10 @@ class Livraisons extends BaseController
                 ->where('mvt_retour', '')
                 ->orWhere('mvt_retour', null)
                 ->findAll(),
-            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
-            'dl' => (new ModelsLivraisons())->where('MONTH(date_livraison)',date('m'))->find(),
+            'chauf' => (new Chauffeurs())->orderBy('nom', 'ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll(),
+            "rem" => (new Remorques())->findAll(),
+            'dl' => (new ModelsLivraisons())->where('MONTH(date_livraison)', date('m'))->find(),
             'transporteur' => (new Transporteurs())->findAll()
         ];
 
@@ -69,9 +71,11 @@ class Livraisons extends BaseController
     {
         $data = [
             'l' => (new ModelsLivraisons())->find($id),
-            'chauf' => (new Chauffeurs())->orderBy('nom','ASC')->findAll(),
-            'trac' => (new Tracteurs())->orderBy('chrono','ASC')->findAll(),
-            'transporteur' => (new Transporteurs())->findAll()
+            'chauf' => (new Chauffeurs())->orderBy('nom', 'ASC')->findAll(),
+            'trac' => (new Tracteurs())->orderBy('chrono', 'ASC')->findAll(),
+            'transporteur' => (new Transporteurs())->findAll(),
+            "rem" => (new Remorques())->findAll(),
+
         ];
 
         return view('utils/livraisons/modifier', $data);

@@ -30,7 +30,11 @@ class Livraisons extends Model
         'mvt_retour',
         'type',
         'transporteur',
-        'retour_rem'
+        'retour_rem',
+        'cam_aller',
+        'cam_retour',
+        'rem_aller',
+        'rem_retour',
     ];
 
     // Dates

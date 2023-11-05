@@ -367,7 +367,8 @@ Archives
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Retour</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
@@ -377,6 +378,8 @@ Archives
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Aller</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque retour</th>
                 <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
@@ -390,7 +393,7 @@ Archives
                   </td>
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['transporteur'] ?>
+                      <?= $l['transporteur'] ?>
                     </div>
                   </td>
                   <td>
@@ -426,6 +429,11 @@ Archives
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['tracteur'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['cam_retour'] ?>
                     </div>
                   </td>
                   <td>
@@ -471,6 +479,16 @@ Archives
                   <td>
                     <div class="d-flex px-3 py-1 gap-2">
                       <?= $l['retour_rem'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['rem_aller'] ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex px-3 py-1 gap-2">
+                      <?= $l['rem_retour'] ?>
                     </div>
                   </td>
                   <td class="align-middle">

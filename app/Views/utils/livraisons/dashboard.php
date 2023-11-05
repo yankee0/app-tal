@@ -66,10 +66,37 @@ Livraisons
               </select>
             </div>
             <div class="mb-3 col-md-4">
-              <label for="tracteur" class="form-label">Tracteur</label>
+              <label for="tracteur" class="form-label">Tracteur Aller</label>
               <select class="form-select " name="tracteur" id="tracteur">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($trac as $t) : ?>
+                  <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="cam_retour" class="form-label">Tracteur retour</label>
+              <select class="form-select " name="cam_retour" id="cam_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($trac as $t) : ?>
+                  <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_aller" class="form-label">Remorque Aller</label>
+              <select class="form-select " name="rem_aller" id="rem_aller">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
+                  <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_retour" class="form-label">Remorque Retour</label>
+              <select class="form-select " name="rem_retour" id="rem_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
                   <option value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
                 <?php endforeach ?>
               </select>
@@ -150,7 +177,8 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
@@ -160,6 +188,8 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque retour</th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
@@ -213,6 +243,11 @@ Livraisons
                     </td>
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['cam_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['chauffeur_aller'] ?>
                       </div>
                     </td>
@@ -256,6 +291,16 @@ Livraisons
                         <?= $l['retour_rem'] ?>
                       </div>
                     </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['rem_aller'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['rem_retour'] ?>
+                      </div>
+                    </td>
                     <td class="align-middle">
                       <div class="d-flex align-items-center gap-3">
                         <span>
@@ -296,7 +341,8 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Conteneur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Armateur</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type TC</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tracteur Retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur aller</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT aller</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Adresse</th>
@@ -306,6 +352,8 @@ Livraisons
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Chauffeur retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">MVT retour</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Retour remorque</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque Aller</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remorque retour</th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
@@ -359,6 +407,11 @@ Livraisons
                     </td>
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['cam_retour'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['chauffeur_aller'] ?>
                       </div>
                     </td>
@@ -400,6 +453,16 @@ Livraisons
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $l['retour_rem'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['rem_aller'] ?>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $l['rem_retour'] ?>
                       </div>
                     </td>
                     <td class="align-middle">

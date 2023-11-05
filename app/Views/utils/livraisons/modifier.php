@@ -66,7 +66,7 @@ Livraisons
               </select>
             </div>
             <div class="mb-3 col-md-4">
-              <label for="tracteur" class="form-label">Tracteur</label>
+              <label for="tracteur" class="form-label">Tracteur Aller</label>
               <select class="form-select " name="tracteur" id="tracteur">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($trac as $t) : ?>
@@ -75,11 +75,38 @@ Livraisons
               </select>
             </div>
             <div class="mb-3 col-md-4">
+              <label for="cam_retour" class="form-label">Tracteur retour</label>
+              <select class="form-select " name="cam_retour" id="cam_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($trac as $t) : ?>
+                  <option <?= ($l['cam_retour'] == $t['chrono']) ? 'selected' : '' ?> value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_aller" class="form-label">Remorque aller</label>
+              <select class="form-select " name="rem_aller" id="rem_aller">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
+                  <option <?= ($l['rem_aller'] == $t['chrono']) ? 'selected' : '' ?> value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
+              <label for="rem_retour" class="form-label">Remorque retour</label>
+              <select class="form-select " name="rem_retour" id="rem_retour">
+                <option value="" hidden selected>Sélectionner</option>
+                <?php foreach ($rem as $t) : ?>
+                  <option <?= ($l['rem_retour'] == $t['chrono']) ? 'selected' : '' ?> value="<?= $t['chrono'] ?>"><?= $t['immatriculation'] . ' / ' . $t['chrono'] ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
+            <div class="mb-3 col-md-4">
               <label for="chauffeur_aller" class="form-label">chauffeur aller</label>
               <select class="form-select " name="chauffeur_aller" id="chauffeur_aller">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($l['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' .$c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($l['chauffeur_aller'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -108,7 +135,7 @@ Livraisons
               <select class="form-select " name="chauffeur_retour" id="chauffeur_retour">
                 <option value="" hidden selected>Sélectionner</option>
                 <?php foreach ($chauf as $c) : ?>
-                  <option <?= ($l['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' .$c['matricule'] . ' - ' . $c['nom'] ?></option>
+                  <option <?= ($l['chauffeur_retour'] == $c['matricule']) ? 'selected' : '' ?> value="<?= $c['matricule'] ?>"><?= $c['societe'] . ' - ' . $c['matricule'] . ' - ' . $c['nom'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>
