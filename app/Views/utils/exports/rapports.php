@@ -82,9 +82,10 @@ Exports
                         <?= $e['lieu_posit'] ?>
                       </div>
                     </td>
-                    <div class="d-flex px-3 py-1 gap-2">
-                      <?= $e['type_posit'] ?>
-                    </div>
+                    <td>
+                      <div class="d-flex px-3 py-1 gap-2">
+                        <?= $e['type_posit'] ?>
+                      </div>
                     </td>
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
@@ -96,7 +97,6 @@ Exports
                         <?= $e['mv_aller'] ?>
                       </div>
                     </td>
-                    <td>
                     <td>
                       <div class="d-flex px-3 py-1 gap-2">
                         <?= $e['camion_aller'] ?>
