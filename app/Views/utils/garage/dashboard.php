@@ -44,9 +44,14 @@ Garage
               <input type="text" step="0.01" class="form-control" id="intervention" name="intervention" required>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="intervenants">Intervenant:</label>
+              <label for="intervenants">Intervenant 1:</label>
               <textarea class="form-control" id="intervenants" name="intervenants"></textarea>
-              <small class="form-text text-muted">Veuillez saisir le nom des intervenants.</small>
+              <small class="form-text text-muted">Veuillez saisir le nom de l'intervenant 1.</small>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="intervenant2">Intervenant 2:</label>
+              <textarea class="form-control" id="intervenant2" name="intervenant2"></textarea>
+              <small class="form-text text-muted">Veuillez saisir le nom de l'intervenant 2.</small>
             </div>
             <div class="col-md-6 mb-3">
               <label for="commentaire">Commentaire pour la ou les pièces changées:</label>
@@ -117,7 +122,8 @@ Garage
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Véhicule</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Montant</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Durée d'intervention</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenants</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenant 1</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Intervenant 2</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Commentaires</th>
                           <th class="text-secondary opacity-7"></th>
                         </tr>
@@ -131,6 +137,7 @@ Garage
                             <td><?= $g['total'] ?></td>
                             <td><?= $g['intervention'] ?></td>
                             <td><?= $g['intervenants'] ?></td>
+                            <td><?= $g['intervenant2'] ?></td>
                             <td><?= $g['commentaire'] ?></td>
                             <td>
                               <span>

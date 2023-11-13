@@ -20,6 +20,7 @@ class Garage extends Model
         'intervention',
         'intervenants',
         'total',
+        'intervenant2'
     ];
 
     // Dates
