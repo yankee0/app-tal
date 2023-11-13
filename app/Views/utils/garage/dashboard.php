@@ -28,10 +28,10 @@ Garage
               <select class="form-control" name="chrono" id="chrono" required>
                 <option hidden selected value="">Selectionner le chrono</option>
                 <?php foreach ($trs as $tr) : ?>
-                  <option value="<?= $tr['chrono'] ?>"><?= $tr['chrono'] ?></option>
+                  <option value="<?= $tr['chrono'] ?>"><?= $tr['chrono'] ?> / TRACTEUR </option>
                 <?php endforeach ?>
                 <?php foreach ($rms as $rm) : ?>
-                  <option value="<?= $rm['chrono'] ?>"><?= $rm['chrono'] ?></option>
+                  <option value="<?= $rm['chrono'] ?>"><?= $rm['chrono'] ?> / <?= $rm['type'] ?> </option>
                 <?php endforeach ?>
               </select>
             </div>

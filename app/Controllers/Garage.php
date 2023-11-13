@@ -7,6 +7,8 @@ use App\Models\Garage as ModelsGarage;
 use App\Models\Remorques;
 use App\Models\Tracteurs;
 
+use function PHPSTORM_META\type;
+
 class Garage extends BaseController
 {
     public function index()
@@ -14,7 +16,10 @@ class Garage extends BaseController
         session()->p = 'garage';
         $data = [
             'trs' => (new Tracteurs())->findAll(),
-            'rms' => (new Remorques())->findAll(),
+            'rms' => (new Remorques())
+                ->orderBy('chrono')
+                ->orderBy('type')
+                ->findAll(),
             'gs' => (new ModelsGarage())
                 ->orderBy('date', 'DESC')
                 ->findAll(),
