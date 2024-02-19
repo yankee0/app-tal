@@ -74,7 +74,7 @@ Garages
                         <?= $g['intervenant2'] ?>
                       </div>
                     </td>
-                    
+
                   </tr>
                 <?php endforeach; ?>
               </tbody>

@@ -27,6 +27,7 @@ Tranferts
                 <option selected>Selectionner</option>
                 <option <?= ($t['type_transfert'] == "FULL IMPORT") ? 'selected' : '' ?> value="FULL IMPORT">FULL IMPORT</option>
                 <option <?= ($t['type_transfert'] == "FULL EXPORT") ? 'selected' : '' ?> value="FULL EXPORT">FULL EXPORT</option>
+                <option <?= ($t['type_transfert'] == "POSIT") ? 'selected' : '' ?> value="POSIT">POSIT</option>
                 <option <?= ($t['type_transfert'] == "FULL VIDE") ? 'selected' : '' ?> value="VIDE">VIDE</option>
               </select>
             </div>
@@ -35,7 +36,10 @@ Tranferts
               <select class="form-select " name="type" id="type" required>
                 <option selected hidden value="">Selectionner</option>
                 <option <?= ($t['type'] == "TOM") ? 'selected' : '' ?> value="TOM">TOM</option>
-                <option <?= ($t['type'] == "WALL") ? 'selected' : '' ?> value="WALL">WALL</option>
+                <option <?= ($t['type'] == "TOM 1") ? 'selected' : '' ?> value="TOM 1">TOM 1</option>
+                <option <?= ($t['type'] == "WALL 1") ? 'selected' : '' ?> value="WALL 1">WALL 1</option>
+                <option <?= ($t['type'] == "WALL 2") ? 'selected' : '' ?> value="WALL 2">WALL 2</option>
+                <option <?= ($t['type'] == "WALL 3") ? 'selected' : '' ?> value="WALL 3">WALL 3</option>
               </select>
             </div>
             <div class="mb-3 col-md-6">

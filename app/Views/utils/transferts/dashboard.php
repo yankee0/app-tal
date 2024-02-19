@@ -25,6 +25,7 @@ Tranferts
                 <option selected>Selectionner</option>
                 <option value="FULL IMPORT">FULL IMPORT</option>
                 <option value="FULL EXPORT">FULL EXPORT</option>
+                <option value="POSIT">POSIT</option>
                 <option value="VIDE">VIDE</option>
               </select>
             </div>
@@ -33,7 +34,10 @@ Tranferts
               <select class="form-select " name="type" id="type" required>
                 <option selected hidden value="">Selectionner</option>
                 <option value="TOM">TOM</option>
-                <option value="WALL">WALL</option>
+                <option value="TOM 1">TOM 1</option>
+                <option value="WALL 1">WALL 1</option>
+                <option value="WALL 2">WALL 2</option>
+                <option value="WALL 3">WALL 3</option>
               </select>
             </div>
             <div class="mb-3 col-md-6">
